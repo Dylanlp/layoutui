@@ -130,7 +130,7 @@ export default function IndexPage() {
 
                   <div className="flex items-center justify-between gap-2 rounded-full  border bg-muted/50 py-1.5 pl-4 pr-2   text-xs  text-muted-foreground  ">
                     <p className="max-w-full truncate whitespace-nowrap ">npx add shadcn@latest https://www.layout.software/r/styles/default/multiplayer.json</p>
-                    <CopyButton className=" min-w-6 rounded-full text-muted-foreground  "  value={`https://www.layout.software/r/styles/default/multiplayer.json`} />
+                    <CopyButton className=" min-w-6 rounded-full text-muted-foreground  "  value={`npx add shadcn@latest https://www.layout.software/r/styles/default/multiplayer.json`} />
                   </div>
                 </div>
               </div>
