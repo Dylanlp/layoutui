@@ -58,6 +58,7 @@ export default function IndexPage() {
       <section className="hidden md:block [&>div]:p-0">
         <CardsNewYork />
       </section>
+      
     </div>
   )
 }

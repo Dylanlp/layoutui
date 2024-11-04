@@ -182,6 +182,11 @@ export const ui: Registry = [
     files: ["ui/menubar.tsx"],
   },
   {
+    name: "multiplayer",
+    type: "registry:ui",
+    files: ["ui/multiplayer.tsx"],
+  },
+  {
     name: "navigation-menu",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-navigation-menu"],
