@@ -12,17 +12,17 @@ export function SiteFooter() {
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
           >
-            shadcn
+            Dylan
           </a>
-          . The source code is available on{" "}
-          <a
+          
+          {/* <a
             href={siteConfig.links.github}
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
           >
             GitHub
-          </a>
+          </a> */}
           .
         </p>
       </div>
