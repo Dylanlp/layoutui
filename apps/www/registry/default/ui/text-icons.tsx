@@ -97,13 +97,42 @@ interface WordProps {
 
 const Word: FC<WordProps> = ({ children, progress, range, isInView }) => {
   const opacity = useTransform(progress, range, [0, 1])
+  const fadeOutOpacity = useTransform(progress, range, [0.3, 0]) // Adjusted from 0.4 to 0.3
+
+  if (isValidElement(children)) {
+    return (
+      <span className="relative mx-1 my-0.5 inline-block lg:mx-2 lg:my-3">
+        <motion.span
+          className="absolute text-black/20 dark:text-white/20"
+          initial={{ opacity: 0.3 }}
+          style={{ opacity: isInView ? fadeOutOpacity : 0.3 }}
+        >
+          {children}
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0 }}
+          style={{ opacity: isInView ? opacity : 0 }}
+          className="relative text-black dark:text-white"
+        >
+          {children}
+        </motion.span>
+      </span>
+    )
+  }
+
   return (
-    <span className="xl:lg-3 relative mx-1 my-0.5 lg:mx-2 lg:my-3 ">
-      <span className={"absolute opacity-40"}>{children}</span>
+    <span className="xl:lg-3 relative mx-1 my-0.5 lg:mx-2 lg:my-3">
+      <motion.span
+        className="absolute text-black/20 dark:text-white/20"
+        initial={{ opacity: 0.3 }}
+        style={{ opacity: isInView ? fadeOutOpacity : 0.3 }}
+      >
+        {children}
+      </motion.span>
       <motion.span
         initial={{ opacity: 0 }}
         style={{ opacity: isInView ? opacity : 0 }}
-        className={"text-black dark:text-white"}
+        className="relative text-black dark:text-white"
       >
         {children}
       </motion.span>

@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 import { siteConfig } from "@/config/site"
 import { Announcement } from "@/components/announcement"
@@ -211,13 +214,35 @@ export default function IndexPage() {
         <div className="mx-auto flex w-full flex-col items-center justify-center py-20">
           <TextIcons>
             In Genoa, where the evening light plays tricks with marble and
-            shadow, I discovered what the modernists{" "}
-            <div className=" h-12 w-20 rounded-lg  bg-teal-500 "></div> have
-            forgotten. The caruggi whisper stories in their own dialect - a
-            language of worn stone steps and faded nobility{" "}
-            <div className=" h-12 w-12 rounded-lg bg-white shadow-[0px_-2.4px_0px_0px_hsla(0,0%,24%,0.04)_inset,0px_0px_0px_1px_hsla(0,0%,92%,1),0px_1px_3px_0px_hsla(0,0%,56%,0.2)]"></div>{" "}
-            each palazzo hiding centuries of Mediterranean intrigue behind its
-            weathered facade. The guided tours march past, but the flaneur{" "}
+            shadow, I discovered what the{" "}
+            <motion.div
+              className=" h-12 w-12 rounded-lg  bg-teal-500 "
+              whileHover={{
+                width: 80,
+              }}
+            ></motion.div>{" "}
+            modernists have forgotten. The caruggi whisper stories in their own
+            dialect - a language of worn stone steps and faded nobility{" "}
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <motion.div
+                className=" absolute z-[9999]  h-full w-full cursor-pointer rounded-xl   bg-white   shadow-[0px_-2.4px_0px_0px_hsla(0,0%,24%,0.04)_inset,0px_0px_0px_1px_hsla(0,0%,92%,1),0px_1px_3px_0px_hsla(0,0%,56%,0.2)]  "
+                whileHover={{
+                  width: 120,
+                  height: 120,
+                  borderRadius: 40,
+                  transition: {
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20,
+                  },
+                }}
+                whileTap={{ scale: 0.95 }}
+              ></motion.div>{" "}
+            </div>
+            each palazzo hiding centuries of Mediterranean intrigue behind its{" "}
+            weathered facade.
+            {/* <div className="w-[960px] h-12 "></div> */}
+            The guided tours march past, but the flaneur{" "}
             <div className=" h-12 w-40 rounded-lg  bg-amber-500 "></div> finds
             poetry in the laundry lines stretched between buildings, where the
             salt air still carries echoes of ancient silk routes and seafaring
