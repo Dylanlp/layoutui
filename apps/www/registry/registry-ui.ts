@@ -343,7 +343,7 @@ export const ui: Registry = [
   },
   {
     name: "text-icons",
-    type: "registry:ui",
+    type: "registry:component",
     files: ["ui/text-icons.tsx"],
   },
   {
