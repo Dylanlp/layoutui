@@ -342,6 +342,11 @@ export const ui: Registry = [
     files: ["ui/tabs.tsx"],
   },
   {
+    name: "text-icons",
+    type: "registry:ui",
+    files: ["ui/text-icons.tsx"],
+  },
+  {
     name: "textarea",
     type: "registry:ui",
     files: ["ui/textarea.tsx"],
