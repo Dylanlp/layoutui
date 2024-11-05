@@ -39,11 +39,11 @@ export const TextIcons: FC<TextIconsProps> = ({ children, className }) => {
   })
 
   return (
-    <div ref={targetRef} className={cn("relative z-0 h-[100vh]", className)}>
+    <div ref={targetRef} className={cn("relative z-0 h-screen", className)}>
       <div className={"max-w-5xl items-center "}>
         <p
           className={
-            "flex flex-wrap p-5 text-2xl font-medium leading-loose tracking-tight text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:text-4xl xl:text-5xl"
+            "flex flex-wrap p-5 text-2xl font-medium leading-loose tracking-tight text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:text-4xl xl:text-[50px]"
           }
         >
           {elements.map((element, i) => {
