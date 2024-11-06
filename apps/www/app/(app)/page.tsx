@@ -102,14 +102,14 @@ export default function IndexPage() {
             />
           </div>{" "} */}
         </div>
-        <div className="flex  gap-4 py-8">
-          <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 md:w-1/2">
+        <div className="grid grid-cols-1 gap-4 py-8 lg:grid-cols-2">
+          <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
             <div className="h-full rounded-[23.5px] border-[2.5px] border-secondary/50">
               <div className="h-full rounded-[21px] border-[0.5px] border-border">
                 <div className="flex h-full flex-col justify-between gap-4 rounded-[20.5px] border-[0.5px] border-border p-10">
                   <h3 className="text-lg font-medium tracking-tight text-foreground">
-                    Day 1.
-                    <span className="text-[#666666]"> Multiplayer Cursors</span>
+                    Multiplayer Cursors
+                    <span className="text-[#666666]"> </span>
                   </h3>
 
                   <Tabs className="relative h-full w-full" defaultValue="tab1">
@@ -192,13 +192,13 @@ export default function IndexPage() {
             </div>
           </div>
 
-          <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 md:w-1/2">
+          <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
             <div className="h-full rounded-[23.5px] border-[2.5px] border-secondary/50">
               <div className="h-full rounded-[21px] border-[0.5px] border-border">
                 <div className="flex h-full flex-col justify-between gap-4 rounded-[20.5px] border-[0.5px] border-border p-10">
                   <h3 className="text-lg font-medium tracking-tight text-foreground">
-                    Day 2.
-                    <span className="text-[#666666]"> Smooth Tabs</span>
+                    Smooth Tabs
+                    <span className="text-[#666666]"> </span>
                   </h3>
                   <div className="flex h-full w-full items-center justify-center">
                     <Tabs className="relative" defaultValue="tab1">

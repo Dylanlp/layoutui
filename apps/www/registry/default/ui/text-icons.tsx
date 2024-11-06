@@ -43,7 +43,7 @@ export const TextIcons: FC<TextIconsProps> = ({ children, className }) => {
       <div className={"max-w-5xl items-center "}>
         <p
           className={
-            "flex flex-wrap p-5 text-2xl font-medium leading-loose tracking-tight text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:text-4xl xl:text-[50px]"
+            "flex flex-wrap p-5 text-2xl font-medium leading-loose tracking-tighter text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:text-4xl xl:text-[50px]"
           }
         >
           {elements.map((element, i) => {
