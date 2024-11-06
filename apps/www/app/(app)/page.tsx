@@ -63,7 +63,7 @@ export default function IndexPage() {
             </div>{" "}
             like and feels like{" "}
             <motion.div
-              className="flex h-12 items-center justify-center rounded-lg bg-background px-4 font-mono uppercase shadow-[0px_-2.4px_0px_0px_hsla(0,0%,24%,0.04)_inset,0px_0px_0px_1px_hsla(0,0%,92%,1),0px_1px_3px_0px_hsla(0,0%,56%,0.2)]"
+              className="flex h-12  items-center justify-center rounded-lg bg-background px-4 font-mono uppercase shadow-[0px_-2.4px_0px_0px_hsla(0,0%,24%,0.04)_inset,0px_0px_0px_1px_hsla(0,0%,92%,1),0px_1px_3px_0px_hsla(0,0%,56%,0.2)] "
               whileHover={{
                 scale: 1.1,
                 transition: {
@@ -71,7 +71,7 @@ export default function IndexPage() {
                 },
               }}
             >
-              <p className="text-2xl tracking-wider text-muted-foreground">
+              <p className="text-sm tracking-wider text-muted-foreground lg:text-2xl">
                 Design
               </p>
             </motion.div>{" "}
