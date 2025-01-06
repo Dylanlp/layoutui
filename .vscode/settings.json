@@ -11,5 +11,10 @@
     "<node_internals>/**",
     "**/node_modules/**",
     "**/fixtures/**"
-  ]
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  }
 }
