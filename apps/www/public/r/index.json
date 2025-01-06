@@ -369,6 +369,16 @@
     ]
   },
   {
+    "name": "multiplayer",
+    "type": "registry:ui",
+    "files": [
+      {
+        "path": "ui/multiplayer.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "navigation-menu",
     "type": "registry:ui",
     "dependencies": [
@@ -633,6 +643,16 @@
     "files": [
       {
         "path": "ui/tabs.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "text-icons",
+    "type": "registry:ui",
+    "files": [
+      {
+        "path": "ui/text-icons.tsx",
         "type": "registry:ui"
       }
     ]

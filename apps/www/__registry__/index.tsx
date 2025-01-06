@@ -305,6 +305,18 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "multiplayer": {
+      name: "multiplayer",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/new-york/ui/multiplayer.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/ui/multiplayer.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "navigation-menu": {
       name: "navigation-menu",
       description: "",
@@ -504,6 +516,18 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/new-york/ui/tabs.tsx"],
       component: React.lazy(() => import("@/registry/new-york/ui/tabs.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "text-icons": {
+      name: "text-icons",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/new-york/ui/text-icons.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/ui/text-icons.tsx")),
       source: "",
       category: "",
       subcategory: "",
@@ -4062,6 +4086,18 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: []
     },
+    "multiplayer": {
+      name: "multiplayer",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/ui/multiplayer.tsx"],
+      component: React.lazy(() => import("@/registry/default/ui/multiplayer.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
     "navigation-menu": {
       name: "navigation-menu",
       description: "",
@@ -4261,6 +4297,18 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/default/ui/tabs.tsx"],
       component: React.lazy(() => import("@/registry/default/ui/tabs.tsx")),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: []
+    },
+    "text-icons": {
+      name: "text-icons",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/ui/text-icons.tsx"],
+      component: React.lazy(() => import("@/registry/default/ui/text-icons.tsx")),
       source: "",
       category: "",
       subcategory: "",
