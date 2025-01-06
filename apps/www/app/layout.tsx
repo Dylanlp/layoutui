@@ -86,24 +86,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          {/* <ThemeProvider
+          <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          > */}
-          <div vaul-drawer-wrapper="">
-            <div className="relative flex min-h-screen flex-col bg-background">
-              {children}
+          >
+            <div vaul-drawer-wrapper="">
+              <div className="relative flex min-h-screen flex-col bg-background">
+                {children}
+              </div>
             </div>
-          </div>
-          <TailwindIndicator />
-          <ThemeSwitcher />
-          <Analytics />
-          <NewYorkToaster />
-          <DefaultToaster />
-          <NewYorkSonner />
-          {/* </ThemeProvider> */}
+            <TailwindIndicator />
+            <ThemeSwitcher />
+            <Analytics />
+            <NewYorkToaster />
+            <DefaultToaster />
+            <NewYorkSonner />
+          </ThemeProvider>
         </body>
       </html>
     </>
