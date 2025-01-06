@@ -51,29 +51,21 @@ export const docsConfig: DocsConfig = {
           href: "/docs/installation",
           items: [],
         },
-     
-     
-     
-  
-    
-    
-     
+
         {
           title: "Figma",
           href: "/docs/figma",
           items: [],
         },
-  
       ],
     },
-   
+
     {
       title: "Components",
       items: [
-      
         {
-          title: "Testimonials",
-          href: "/docs/components/anew",
+          title: "Stars",
+          href: "/docs/components/stars",
           items: [],
           label: "New",
         },

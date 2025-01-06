@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "layout",
+  name: "Layout UI",
   url: "https://layout.software",
   ogImage: "https://layout.software/og.jpg",
   description:

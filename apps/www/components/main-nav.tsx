@@ -14,8 +14,8 @@ export function MainNav() {
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-4 flex items-center space-x-2 lg:mr-10">
         {/* <Icons.logo className="h-6 w-6" /> */}
-        <span className="hidden font-semibold capitalize lg:inline-block">
-          {siteConfig.name} UI
+        <span className="hidden font-semibold capitalize tracking-tight lg:inline-block">
+          {siteConfig.name}
         </span>
       </Link>
       <nav className="flex items-center  gap-4 text-sm lg:gap-6">
