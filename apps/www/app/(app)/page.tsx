@@ -78,13 +78,13 @@ export default function IndexPage() {
           </Button>
         </PageActions>
       </PageHeader> */}
-      <div className="flex w-full flex-col gap-4">
-        <div className="mx-auto flex w-full  flex-col items-center justify-center gap-10 py-40 text-center">
+      <div className="flex w-full flex-col gap-10">
+        <div className="mx-auto flex w-full  flex-col items-center justify-center gap-6 pb-8 pt-16 text-center">
           <h1 className="flex  items-center justify-center gap-3 text-6xl font-semibold tracking-tighter">
             Components for{" "}
-            <span className="flex items-center justify-center gap-5 rounded-3xl border border-green-200 bg-green-50 py-2 pl-5 pr-7 text-primary shadow-md">
+            <span className="relative flex items-center justify-center gap-5 rounded-3xl border border-green-200/50 bg-green-50/50 py-2 pl-5 pr-20 text-green-900  ">
               Conversion{" "}
-              <div className="w-16 rounded-xl bg-green-100 px-2 py-1 font-mono text-sm tracking-normal text-green-700">
+              <div className="absolute right-2 top-2 w-16 rounded-xl border border-green-200 bg-green-100/50 px-2 py-1 text-sm uppercase tracking-normal text-green-700">
                 {count}%
               </div>
             </span>
@@ -139,11 +139,11 @@ export default function IndexPage() {
             />
           </div>{" "} */}
         </div>
-        <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center gap-6 py-4 md:py-6">
+        <div className="mx-auto flex w-full max-w-[1100px] flex-col items-center justify-center gap-6  ">
           <p className="text-xs text-muted-foreground ">
-            Used by designers that have worked with
+            Made by designers that have worked with
           </p>
-          <div className="mx-auto grid w-full auto-cols-auto grid-cols-3 items-center justify-items-center gap-4 px-4 text-sm font-bold uppercase text-muted-foreground/50 lg:grid-cols-7 lg:gap-24 lg:px-24">
+          <div className="mx-auto grid w-full auto-cols-auto grid-cols-3 items-center justify-items-center gap-2 px-4 text-sm font-bold uppercase text-muted-foreground/50 lg:grid-cols-7 lg:gap-4 lg:px-24">
             <div className="flex h-5 items-center justify-center opacity-50 transition-all duration-300 hover:opacity-100">
               {/* <img
                   className="h-5"
@@ -685,6 +685,22 @@ export default function IndexPage() {
             </div>
           </div>
         </div>
+        <Tabs className="mx-auto mt-10" defaultValue="tab1">
+          <TabsList className="mx-auto rounded-full">
+            <TabsTrigger className="rounded-full" value="tab1">
+              All
+            </TabsTrigger>
+            <TabsTrigger className="rounded-full" value="tab2">
+              Pricing Plans
+            </TabsTrigger>
+            <TabsTrigger className="rounded-full" value="tab3">
+              Testimonials
+            </TabsTrigger>
+            <TabsTrigger className="rounded-full" value="tab4">
+              Logo Grids
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
         <div className="grid grid-cols-1 gap-4 py-8 lg:grid-cols-2">
           <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
             <div className="h-full rounded-[23.5px] border-[2.5px] border-secondary/50">
@@ -694,82 +710,7 @@ export default function IndexPage() {
                     Pricing Plans
                     <span className="text-[#666666]"> </span>
                   </h3>
-
-                  <Tabs className="relative h-full w-full" defaultValue="tab1">
-                    <TabsList className="rounded-full" defaultValue="tab1">
-                      <TabsTrigger className="rounded-full" value="tab1">
-                        Default
-                      </TabsTrigger>
-                      <TabsTrigger className="rounded-full" value="tab2">
-                        Dot
-                      </TabsTrigger>
-                    </TabsList>
-                    <TabsContent className="z-50 h-full w-full" value="tab1">
-                      {" "}
-                      <MultiplayerCursor
-                        name="Will"
-                        color="#FFD700"
-                        style={{ zIndex: 10 }}
-                        variant="default"
-                      />
-                      <MultiplayerCursor
-                        name="Lara"
-                        color="#479DFF"
-                        style={{ zIndex: 10 }}
-                        variant="default"
-                      />
-                      <MultiplayerCursor
-                        name="Seb"
-                        color="#FF6B6B"
-                        style={{ zIndex: 10 }}
-                        variant="default"
-                      />
-                      <MultiplayerCursor
-                        name="Marc"
-                        color="#8A2BE2"
-                        style={{ zIndex: 10 }}
-                        variant="default"
-                      />
-                    </TabsContent>
-                    <TabsContent className="z-50 h-full w-full" value="tab2">
-                      {" "}
-                      <MultiplayerCursor
-                        name="Will"
-                        color="#FFD700"
-                        style={{ zIndex: 10 }}
-                        variant="outline"
-                      />
-                      <MultiplayerCursor
-                        name="Lara"
-                        color="#479DFF"
-                        style={{ zIndex: 10 }}
-                        variant="outline"
-                      />
-                      <MultiplayerCursor
-                        name="Seb"
-                        color="#FF6B6B"
-                        style={{ zIndex: 10 }}
-                        variant="outline"
-                      />
-                      <MultiplayerCursor
-                        name="Marc"
-                        color="#8A2BE2"
-                        style={{ zIndex: 10 }}
-                        variant="outline"
-                      />
-                    </TabsContent>
-                  </Tabs>
-
-                  <div className="flex items-center justify-between gap-2 rounded-full  border bg-muted/50 py-1.5 pl-4 pr-2   text-xs  text-muted-foreground  ">
-                    <p className="max-w-full truncate whitespace-nowrap ">
-                      npx add shadcn@latest
-                      https://www.layout.software/r/styles/default/multiplayer.json
-                    </p>
-                    <CopyButton
-                      className=" min-w-6 rounded-full text-muted-foreground  "
-                      value={`npx add shadcn@latest https://www.layout.software/r/styles/default/multiplayer.json`}
-                    />
-                  </div>
+                  Pricing
                 </div>
               </div>
             </div>
@@ -782,82 +723,7 @@ export default function IndexPage() {
                     Eyebrow
                     <span className="text-[#666666]"> </span>
                   </h3>
-
-                  <Tabs className="relative h-full w-full" defaultValue="tab1">
-                    <TabsList className="rounded-full" defaultValue="tab1">
-                      <TabsTrigger className="rounded-full" value="tab1">
-                        Default
-                      </TabsTrigger>
-                      <TabsTrigger className="rounded-full" value="tab2">
-                        Dot
-                      </TabsTrigger>
-                    </TabsList>
-                    <TabsContent className="z-50 h-full w-full" value="tab1">
-                      {" "}
-                      <MultiplayerCursor
-                        name="Will"
-                        color="#FFD700"
-                        style={{ zIndex: 10 }}
-                        variant="default"
-                      />
-                      <MultiplayerCursor
-                        name="Lara"
-                        color="#479DFF"
-                        style={{ zIndex: 10 }}
-                        variant="default"
-                      />
-                      <MultiplayerCursor
-                        name="Seb"
-                        color="#FF6B6B"
-                        style={{ zIndex: 10 }}
-                        variant="default"
-                      />
-                      <MultiplayerCursor
-                        name="Marc"
-                        color="#8A2BE2"
-                        style={{ zIndex: 10 }}
-                        variant="default"
-                      />
-                    </TabsContent>
-                    <TabsContent className="z-50 h-full w-full" value="tab2">
-                      {" "}
-                      <MultiplayerCursor
-                        name="Will"
-                        color="#FFD700"
-                        style={{ zIndex: 10 }}
-                        variant="outline"
-                      />
-                      <MultiplayerCursor
-                        name="Lara"
-                        color="#479DFF"
-                        style={{ zIndex: 10 }}
-                        variant="outline"
-                      />
-                      <MultiplayerCursor
-                        name="Seb"
-                        color="#FF6B6B"
-                        style={{ zIndex: 10 }}
-                        variant="outline"
-                      />
-                      <MultiplayerCursor
-                        name="Marc"
-                        color="#8A2BE2"
-                        style={{ zIndex: 10 }}
-                        variant="outline"
-                      />
-                    </TabsContent>
-                  </Tabs>
-
-                  <div className="flex items-center justify-between gap-2 rounded-full  border bg-muted/50 py-1.5 pl-4 pr-2   text-xs  text-muted-foreground  ">
-                    <p className="max-w-full truncate whitespace-nowrap ">
-                      npx add shadcn@latest
-                      https://www.layout.software/r/styles/default/multiplayer.json
-                    </p>
-                    <CopyButton
-                      className=" min-w-6 rounded-full text-muted-foreground  "
-                      value={`npx add shadcn@latest https://www.layout.software/r/styles/default/multiplayer.json`}
-                    />
-                  </div>
+                  Eyebrow
                 </div>
               </div>
             </div>
