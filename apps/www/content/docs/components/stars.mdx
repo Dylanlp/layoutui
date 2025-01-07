@@ -6,7 +6,7 @@ links:
 ---
 
 <ComponentPreview
-  name="accordion-demo"
+  name="stars-demo"
   className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
   description="An accordion with three items"
 />
@@ -81,21 +81,9 @@ module.exports = {
 ## Usage
 
 ```tsx
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import Stars from "@/components/ui/stars"
 ```
 
 ```tsx
-<Accordion type="single" collapsible>
-  <AccordionItem value="item-1">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>
+<Stars count={400} text="Trusted by" />
 ```
