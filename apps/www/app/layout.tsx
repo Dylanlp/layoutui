@@ -87,11 +87,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
+            // attribute="class"
+            defaultTheme="system"
             enableSystem={false}
             disableTransitionOnChange
-            
           >
             <div vaul-drawer-wrapper="">
               <div className="relative flex min-h-screen flex-col bg-background">

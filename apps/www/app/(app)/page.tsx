@@ -749,6 +749,10 @@ export default function IndexPage() {
           </div> */}
           </div>
         </div>
+        <p>
+          built by Dylan - Designing products and landing pages for startups for
+          7+ years
+        </p>
       </div>
       {/* <ExamplesNav className="[&>a:first-child]:text-primary" /> */}
     </div>
