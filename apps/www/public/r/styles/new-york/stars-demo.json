@@ -1,0 +1,13 @@
+{
+  "name": "stars-demo",
+  "type": "registry:example",
+  "registryDependencies": ["stars"],
+  "files": [
+    {
+      "path": "example/stars-demo.tsx",
+      "content": "import Stars from \"@/registry/default/ui/stars\"\n\nexport default function StarsDemo() {\n  return <Stars count={400} text=\"Trusted by\" />\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
