@@ -19,15 +19,44 @@ import {
 import MultiplayerCursor from "@/registry/default/ui/multiplayer"
 import TextIcons from "@/registry/default/ui/text-icons"
 import CardsNewYork from "@/registry/new-york/example/cards"
+import {
+  Achievement,
+  Achievements,
+  Metric,
+  Stat,
+} from "@/registry/new-york/ui/achievements"
 import { Button } from "@/registry/new-york/ui/button"
 import { Input } from "@/registry/new-york/ui/input"
-import { Stars } from "@/registry/new-york/ui/stars"
+import { Logo, LogoGrid } from "@/registry/new-york/ui/logogrid"
+import { StarImage, Stars } from "@/registry/new-york/ui/stars"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/registry/new-york/ui/tabs"
+import {
+  Name,
+  TestimonialAvatar,
+  TestimonialCard,
+  TestimonialCarousel,
+  TestimonialContent,
+  TestimonialDate,
+  TestimonialHeader,
+  TestimonialHighlight,
+  TestimonialInfo,
+  TestimonialStars,
+  Username,
+} from "@/registry/new-york/ui/testimonial"
+import {
+  VerticalTestimonial,
+  VerticalTestimonialAvatar,
+  VerticalTestimonialContent,
+  VerticalTestimonialHighlight,
+  VerticalTestimonialInfo,
+  VerticalTestimonialName,
+  VerticalTestimonialRole,
+} from "@/registry/new-york/ui/verticaltestimonial"
 
 export default function IndexPage() {
   const [count, setCount] = useState(0)
@@ -587,20 +616,31 @@ export default function IndexPage() {
             </TabsList>
           </Tabs>
           <div className="mx-auto grid w-full max-w-screen-lg grid-cols-1 gap-3 py-8 lg:grid-cols-2">
-            <div className="flex h-80 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
+            <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
               <div className="h-full rounded-[23.5px] border-[2.5px] border-secondary/50">
                 <div className="h-full rounded-[21px] border-[0.5px] border-border">
                   <div className="flex h-full flex-col justify-between gap-4 rounded-[20.5px] border-[0.5px] border-border p-10">
                     <h3 className="text-lg font-medium tracking-tight text-foreground">
-                      Pricing Plans
+                      Achievements
                       <span className="text-[#666666]"> </span>
                     </h3>
-                    Pricing
+                    <div className="flex h-full w-full items-center justify-center gap-8">
+                      <Achievements>
+                        <Achievement>
+                          <Stat>12k+</Stat>
+                          <Metric>Users</Metric>
+                        </Achievement>
+                        <Achievement>
+                          <Stat>200k+</Stat>
+                          <Metric>Downloads</Metric>
+                        </Achievement>
+                      </Achievements>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="flex h-80 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
+            <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
               <div className="h-full rounded-[23.5px] border-[2.5px] border-secondary/50">
                 <div className="h-full rounded-[21px] border-[0.5px] border-border">
                   <div className="flex h-full flex-col justify-between gap-4 rounded-[20.5px] border-[0.5px] border-border p-10">
@@ -609,7 +649,172 @@ export default function IndexPage() {
                       <span className="text-[#666666]"> </span>
                     </h3>
                     <div className="flex h-full w-full items-center justify-center">
-                      <Stars count={500} text="Loved by" />
+                      <Stars count={500} text="Loved by">
+                        <StarImage src="https://github.com/shadcn.png" />
+                        <StarImage src="https://github.com/shadcn.png" />
+                        <StarImage src="https://github.com/shadcn.png" />
+                        <StarImage src="https://github.com/shadcn.png" />
+                      </Stars>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
+              <div className="h-full rounded-[23.5px] border-[2.5px] border-secondary/50">
+                <div className="h-full rounded-[21px] border-[0.5px] border-border">
+                  <div className="flex h-full flex-col justify-between gap-4 rounded-[20.5px] border-[0.5px] border-border p-10">
+                    <h3 className="text-lg font-medium tracking-tight text-foreground">
+                      Testimonial Card
+                      <span className="text-[#666666]"> </span>
+                    </h3>
+                    <div className="flex h-full w-full items-center justify-center">
+                      <TestimonialCard>
+                        <TestimonialHeader>
+                          <TestimonialAvatar src="https://github.com/shadcn.png" />
+                          <TestimonialInfo>
+                            <Name>Name</Name>
+                            <Username>@username</Username>
+                          </TestimonialInfo>
+                        </TestimonialHeader>
+
+                        <TestimonialStars />
+
+                        <TestimonialContent>
+                          <TestimonialHighlight>
+                            Lorem ipsum dolor sit amet
+                          </TestimonialHighlight>{" "}
+                          consectetur adipisicing elit. Quisquam, quos.
+                        </TestimonialContent>
+
+                        <TestimonialDate>Dec 7, 2024</TestimonialDate>
+                      </TestimonialCard>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
+              <div className="h-full rounded-[23.5px] border-[2.5px] border-secondary/50">
+                <div className="h-full rounded-[21px] border-[0.5px] border-border">
+                  <div className="flex h-full flex-col justify-between gap-4 overflow-hidden rounded-[20.5px] border-[0.5px] border-border ">
+                    <h3 className="p-10 text-lg font-medium tracking-tight text-foreground">
+                      Testimonial Carousel
+                      <span className="text-[#666666]"> </span>
+                    </h3>
+                    <div className="flex h-full w-full items-center justify-center gap-4 pb-8">
+                      <TestimonialCarousel>
+                        {Array.from({ length: 5 }).map((_, index) => (
+                          <TestimonialCard key={index}>
+                            <TestimonialHeader>
+                              <TestimonialAvatar src="https://github.com/shadcn.png" />
+                              <TestimonialInfo>
+                                <Name>Name</Name>
+                                <Username>@username</Username>
+                              </TestimonialInfo>
+                            </TestimonialHeader>
+
+                            <TestimonialStars />
+
+                            <TestimonialContent>
+                              <TestimonialHighlight>
+                                Lorem ipsum dolor sit amet
+                              </TestimonialHighlight>{" "}
+                              consectetur adipisicing elit. Quisquam, quos.
+                            </TestimonialContent>
+
+                            <TestimonialDate>Dec 7, 2024</TestimonialDate>
+                          </TestimonialCard>
+                        ))}
+                      </TestimonialCarousel>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
+              <div className="h-full rounded-[23.5px] border-[2.5px] border-secondary/50">
+                <div className="h-full rounded-[21px] border-[0.5px] border-border">
+                  <div className="flex h-full flex-col justify-between gap-4 rounded-[20.5px] border-[0.5px] border-border p-10">
+                    <h3 className="text-lg font-medium tracking-tight text-foreground">
+                      Vertical Testimonial
+                      <span className="text-[#666666]"> </span>
+                    </h3>
+                    <div className="flex h-full w-full items-center justify-center">
+                      <VerticalTestimonial>
+                        <VerticalTestimonialContent>
+                          <VerticalTestimonialHighlight>
+                            Lorem ipsum dolor sit amet
+                          </VerticalTestimonialHighlight>{" "}
+                          consectetur adipisicing elit. Quisquam, quos.
+                        </VerticalTestimonialContent>
+
+                        <div className="flex flex-col items-center gap-2">
+                          <VerticalTestimonialAvatar />
+                          <VerticalTestimonialInfo>
+                            <VerticalTestimonialName>
+                              Name
+                            </VerticalTestimonialName>
+                            <VerticalTestimonialRole>
+                              Founder,{" "}
+                              <a
+                                href="https://www.acme.com"
+                                className="underline underline-offset-4"
+                              >
+                                Acme Corp
+                              </a>
+                            </VerticalTestimonialRole>
+                          </VerticalTestimonialInfo>
+                        </div>
+
+                        <TestimonialStars />
+                      </VerticalTestimonial>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex h-96 w-full flex-col rounded-3xl border-[0.5px] border-border/60 ">
+              <div className="h-full rounded-[23.5px] border-[2.5px] border-secondary/50">
+                <div className="h-full rounded-[21px] border-[0.5px] border-border">
+                  <div className="flex h-full flex-col justify-between gap-4 rounded-[20.5px] border-[0.5px] border-border p-10">
+                    <h3 className="text-lg font-medium tracking-tight text-foreground">
+                      Logo Grid
+                      <span className="text-[#666666]"> </span>
+                    </h3>
+                    <div className="flex h-full w-full items-center justify-center">
+                      <LogoGrid>
+                        <Logo
+                          src="https://github.com/shadcn.png"
+                          alt="Logo 1"
+                        />
+                        <Logo src="" alt="Logo 2" />
+                        <Logo
+                          src="https://github.com/shadcn.png"
+                          alt="Logo 3"
+                        />
+                        <Logo
+                          src="https://github.com/shadcn.png"
+                          alt="Logo 4"
+                        />
+                        <Logo
+                          src="https://github.com/shadcn.png"
+                          alt="Logo 5"
+                        />
+                        <Logo
+                          src="https://github.com/shadcn.png"
+                          alt="Logo 6"
+                        />
+                        <Logo
+                          src="https://github.com/shadcn.png"
+                          alt="Logo 7"
+                        />
+                        <Logo
+                          src="https://github.com/shadcn.png"
+                          alt="Logo 8"
+                        />
+                      </LogoGrid>
                     </div>
                   </div>
                 </div>

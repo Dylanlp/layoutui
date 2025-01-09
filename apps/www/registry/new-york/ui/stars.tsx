@@ -4,35 +4,48 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+interface StarImageProps {
+  src?: string
+}
+
+const StarImage = ({ src }: StarImageProps) => {
+  return (
+    <div className="h-9 w-9 overflow-hidden rounded-full border-2 border-white">
+      {src ? (
+        <img
+          src={src}
+          alt="Customer avatar"
+          className="h-full w-full object-cover"
+        />
+      ) : (
+        <div className="h-full w-full bg-gray-100" />
+      )}
+    </div>
+  )
+}
+
 interface StarsProps extends React.HTMLAttributes<HTMLDivElement> {
   count?: number
   text?: string
+  children?: React.ReactNode
 }
 
 const Stars = React.forwardRef<HTMLDivElement, StarsProps>(
-  ({ className, count = 400, text = "Trusted by", ...props }, ref) => {
+  (
+    { className, count = 400, text = "Trusted by", children, ...props },
+    ref
+  ) => {
+    const images = React.Children.toArray(children)
+
     return (
       <div
         ref={ref}
         className={cn("flex items-center gap-2", className)}
         {...props}
       >
-        <div className="flex -space-x-2">
-          {[...Array(5)].map((_, i) => (
-            <div
-              key={i}
-              className="h-8 w-8 overflow-hidden rounded-full border-2 border-white"
-            >
-              <img
-                src="/avatar-placeholder.jpg" // You'll need to replace this with your actual image path
-                alt="Customer avatar"
-                className="h-full w-full bg-muted object-cover"
-              />
-            </div>
-          ))}
-        </div>
+        <div className="flex -space-x-2">{images}</div>
         <div className="flex flex-col">
-          <div className="flex text-orange-400">
+          <div className="-ml-1 flex text-orange-400">
             {[...Array(5)].map((_, i) => (
               <svg
                 key={i}
@@ -44,7 +57,7 @@ const Stars = React.forwardRef<HTMLDivElement, StarsProps>(
               </svg>
             ))}
           </div>
-          <div className="text-sm text-gray-600">
+          <div className="pb-0.5 text-sm leading-4 text-gray-600">
             {text} {count}+ customers
           </div>
         </div>
@@ -54,4 +67,4 @@ const Stars = React.forwardRef<HTMLDivElement, StarsProps>(
 )
 Stars.displayName = "Stars"
 
-export { Stars }
+export { Stars, StarImage }
