@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useInView } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -52,16 +53,23 @@ const VerticalTestimonialHighlight = React.forwardRef<
   HTMLSpanElement,
   React.HTMLAttributes<HTMLSpanElement>
 >(({ className, children, ...props }, ref) => {
+  const highlightRef = React.useRef(null)
+  const isInView = useInView(highlightRef, { once: true })
+
   return (
     <span
-      ref={ref}
-      className={cn(
-        "bg-gradient-to-r from-yellow-100 to-transparent",
-        className
-      )}
+      ref={highlightRef}
+      className={cn("relative inline-block", className)}
       {...props}
     >
-      {children}
+      <span className="relative z-10">{children}</span>
+      <span
+        className={cn(
+          "absolute inset-0 bg-gradient-to-r from-yellow-100 from-50% to-yellow-100/20",
+          isInView && "animate-highlight"
+        )}
+        aria-hidden="true"
+      />
     </span>
   )
 })
@@ -79,7 +87,11 @@ const VerticalTestimonialAvatar = React.forwardRef<
   VerticalTestimonialAvatarProps
 >(({ className, src, alt, ...props }, ref) => {
   return (
-    <div className="h-10 w-10 rounded-full bg-muted" ref={ref} {...props}>
+    <div
+      className="h-10 w-10 overflow-hidden rounded-full bg-muted"
+      ref={ref}
+      {...props}
+    >
       {src && (
         <img src={src} alt={alt} className="h-full w-full object-cover" />
       )}

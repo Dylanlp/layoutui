@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 
 interface LogoGridProps extends React.HTMLAttributes<HTMLDivElement> {
   interval?: number
+  quantity?: number
   children: React.ReactNode
 }
 
@@ -20,10 +21,19 @@ const Logo = React.forwardRef<HTMLDivElement, LogoProps>(
     return (
       <div
         ref={ref}
-        className={cn("h-10 w-10 overflow-hidden rounded-full", className)}
+        className={cn(
+          "flex h-8 w-28 items-center justify-center bg-transparent p-1",
+          className
+        )}
         {...props}
       >
-        <img src={src} alt={alt} className="h-full w-full object-cover" />
+        <div className="flex h-full w-full items-center justify-center">
+          <img
+            src={src}
+            alt={alt}
+            className="max-h-full max-w-full object-contain"
+          />
+        </div>
       </div>
     )
   }
@@ -31,43 +41,57 @@ const Logo = React.forwardRef<HTMLDivElement, LogoProps>(
 Logo.displayName = "Logo"
 
 const LogoGrid = React.forwardRef<HTMLDivElement, LogoGridProps>(
-  ({ className, interval = 3000, children, ...props }, ref) => {
+  ({ className, interval = 3000, quantity = 6, children, ...props }, ref) => {
     const logos = React.Children.toArray(children)
     const [visibleLogos, setVisibleLogos] = React.useState<number[]>([])
-    const [nextLogoIndex, setNextLogoIndex] = React.useState(4) // Start after initial 4
-    const [isInitialRender, setIsInitialRender] = React.useState(true)
+    const [nextLogoIndex, setNextLogoIndex] = React.useState(0)
 
-    // Initialize with first 4 logos
+    // Initialize with first N unique logos (or less if fewer logos provided)
     React.useEffect(() => {
-      const initialLogos = Array.from({ length: 4 }, (_, i) => i % logos.length)
-      setVisibleLogos(initialLogos)
-      setIsInitialRender(false)
-    }, [logos.length])
+      const numLogosToShow = Math.min(quantity, logos.length)
+      const initialLogos = Array.from({ length: numLogosToShow }, (_, i) => i)
+      setVisibleLogos(initialLogos.slice(0, quantity))
+      setNextLogoIndex(numLogosToShow)
+    }, [logos.length, quantity])
 
-    // Handle the rotation
+    // Handle the rotation only if we have more logos than quantity
     React.useEffect(() => {
-      if (isInitialRender || logos.length <= 4) return
+      if (logos.length <= quantity) return
 
       const timer = setInterval(() => {
         setVisibleLogos((prev) => {
-          const next = [...prev]
-          const replaceIndex = Math.floor(Math.random() * 4)
+          if (prev.length >= quantity) {
+            // Find a random position to replace
+            const replaceIndex = Math.floor(Math.random() * quantity)
 
-          // Replace with next logo
-          next[replaceIndex] = nextLogoIndex % logos.length
-          return next
+            // Find the next available logo that isn't currently visible
+            let nextIndex = nextLogoIndex % logos.length
+            while (prev.includes(nextIndex)) {
+              nextIndex = (nextIndex + 1) % logos.length
+            }
+
+            const next = [...prev]
+            next[replaceIndex] = nextIndex
+            return next.slice(0, quantity)
+          }
+          return prev
         })
 
         setNextLogoIndex((current) => (current + 1) % logos.length)
       }, interval)
 
       return () => clearInterval(timer)
-    }, [interval, logos.length, isInitialRender, nextLogoIndex])
+    }, [interval, logos.length, nextLogoIndex, quantity])
 
     return (
       <div
         ref={ref}
-        className={cn("grid grid-cols-4 gap-8", className)}
+        className={cn(
+          `grid gap-x-10 gap-y-7 ${
+            quantity <= 3 ? "grid-cols-" + quantity : "grid-cols-3"
+          }`,
+          className
+        )}
         {...props}
       >
         <AnimatePresence mode="popLayout">

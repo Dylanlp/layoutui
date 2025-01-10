@@ -1,7 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { motion } from "framer-motion"
+import {
+  motion,
+  useAnimationFrame,
+  useMotionValue,
+  useTransform,
+} from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -14,7 +19,7 @@ const TestimonialCard = React.forwardRef<HTMLDivElement, TestimonialCardProps>(
       <div
         ref={ref}
         className={cn(
-          "flex w-80 flex-col gap-4 rounded-2xl border-[0.5px] border-border bg-background p-4 shadow-sm",
+          "flex w-80 flex-col gap-4 hover:scale-[1.03] transition-all duration-300 rounded-2xl border-[0.5px] border-border bg-background p-4 shadow-sm",
           className
         )}
         {...props}
@@ -215,35 +220,38 @@ const TestimonialCarousel = React.forwardRef<
     {
       className,
       children,
-      speed = 30, // Increased default speed to 30 seconds
-      direction = "ltr", // Added direction prop with default left-to-right
+      speed = 30,
+      direction = "ltr",
       pauseOnHover = true,
       ...props
     },
     ref
   ) => {
+    const [isPaused, setIsPaused] = React.useState(false)
+    const baseX = useMotionValue(0)
+    const x = useTransform(baseX, (value) => `${value}%`)
+
+    useAnimationFrame((time, delta) => {
+      if (isPaused) return
+
+      baseX.set(
+        (baseX.get() +
+          (direction === "ltr" ? -0.05 : 0.05) * (delta / 16.666)) %
+          50
+      )
+    })
+
     return (
       <div
-        className="relative flex w-full overflow-hidden"
+        className="relative flex w-full overflow-hidden py-4 px-4"
         ref={ref}
+        onMouseEnter={() => pauseOnHover && setIsPaused(true)}
+        onMouseLeave={() => pauseOnHover && setIsPaused(false)}
         {...props}
       >
-        <motion.div
-          className="flex gap-4 px-4"
-          animate={{
-            x: direction === "ltr" ? ["-50%", "0%"] : ["0%", "-50%"], // Changed animation direction
-          }}
-          transition={{
-            duration: speed,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          {...(pauseOnHover && {
-            whileHover: { animationPlayState: "paused" },
-          })}
-        >
+        <motion.div className="flex gap-4" style={{ x }}>
           {children}
-          {children} {/* Duplicate children for seamless loop */}
+          {children}
         </motion.div>
       </div>
     )
