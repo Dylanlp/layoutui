@@ -613,6 +613,9 @@ export default function IndexPage() {
               <TabsTrigger className="rounded-full" value="tab4">
                 Logo Grids
               </TabsTrigger>
+              <TabsTrigger className="rounded-full" value="tab4">
+                Hero Sections
+              </TabsTrigger>
             </TabsList>
           </Tabs>
           <div className="mx-auto grid w-full max-w-screen-lg grid-cols-1 gap-3 py-8 lg:grid-cols-2">
