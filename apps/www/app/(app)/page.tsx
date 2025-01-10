@@ -182,7 +182,7 @@ export default function IndexPage() {
                   } as any
                 }
                 onClick={startAnimation}
-                className="  absolute right-2 top-2 flex h-7 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-[hsl(var(--hue),70%,90%)] bg-[hsl(var(--hue),70%,95%)] px-2 text-sm uppercase tracking-normal text-[hsl(var(--hue),70%,30%)] transition-all hover:scale-105  active:scale-95 group-hover:w-8"
+                className="  absolute right-2 top-2 flex h-7 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-[hsl(var(--hue),70%,90%)] bg-[hsl(var(--hue),70%,95%)] px-2 text-sm uppercase tracking-normal text-[hsl(var(--hue),70%,30%)] transition-all duration-100 hover:scale-105  active:scale-95 group-hover:w-8"
               >
                 <div className="relative h-7 w-full overflow-hidden">
                   <div
@@ -200,8 +200,8 @@ export default function IndexPage() {
                         <span className="absolute inset-0 flex items-center justify-center transition-opacity duration-200 group-hover:opacity-0">
                           {count}%
                         </span>
-                        <div className="flex items-center justify-center opacity-0 transition-opacity duration-200  group-hover:opacity-100">
-                          <RotateCwIcon className="h-4 w-4 transition-transform duration-300 group-hover:rotate-90" />
+                        <div className="flex items-center justify-center opacity-0 transition-all duration-200  group-hover:opacity-100">
+                          <RotateCwIcon className="h-4 w-4 transition-transform duration-200 group-hover:rotate-90" />
                         </div>
                       </div>
                     </div>
@@ -501,7 +501,7 @@ export default function IndexPage() {
                   <div className="flex items-center gap-6">
                     <div className="relative flex h-10 w-10 items-center">
                       <img
-                        src="https://github.com/shadcn.png"
+                        src="https://cal.com/api/avatar/122580ed-bc99-4f13-9b97-c609fecdb335.png"
                         alt="dylan"
                         className="h-10 w-10 rounded-full"
                       />
