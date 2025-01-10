@@ -60,21 +60,24 @@ const LogoGrid = React.forwardRef<HTMLDivElement, LogoGridProps>(
 
       const timer = setInterval(() => {
         setVisibleLogos((prev) => {
-          if (prev.length >= quantity) {
-            // Find a random position to replace
-            const replaceIndex = Math.floor(Math.random() * quantity)
+          // Find a random position to replace
+          const replaceIndex = Math.floor(Math.random() * quantity)
 
-            // Find the next available logo that isn't currently visible
-            let nextIndex = nextLogoIndex % logos.length
-            while (prev.includes(nextIndex)) {
-              nextIndex = (nextIndex + 1) % logos.length
-            }
+          // Get all available indices that aren't currently visible
+          const availableIndices = Array.from(
+            { length: logos.length },
+            (_, i) => i
+          ).filter((index) => !prev.includes(index))
 
-            const next = [...prev]
-            next[replaceIndex] = nextIndex
-            return next.slice(0, quantity)
-          }
-          return prev
+          // If we have available indices, use the next one, otherwise start over
+          const nextIndex =
+            availableIndices.length > 0
+              ? availableIndices[0]
+              : nextLogoIndex % logos.length
+
+          const next = [...prev]
+          next[replaceIndex] = nextIndex
+          return next
         })
 
         setNextLogoIndex((current) => (current + 1) % logos.length)
