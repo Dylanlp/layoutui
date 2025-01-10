@@ -523,12 +523,6 @@ export default function IndexPage() {
             </OutlineCard>
           </div>
         </div>
-        <div className="mx-auto flex max-w-md flex-col items-center justify-center rounded-2xl border-[0.5px] border-border/60 bg-white p-10 shadow-sm">
-          <p>
-            built by Dylan - Designing products and landing pages for startups
-            for 7+ years
-          </p>
-        </div>
       </div>
       {/* <ExamplesNav className="[&>a:first-child]:text-primary" /> */}
     </div>
