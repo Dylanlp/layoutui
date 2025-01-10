@@ -171,7 +171,7 @@ export default function IndexPage() {
                   "--hue": `${count * 2.4}`, // 0 -> red (0), 25 -> orange (60), 50 -> green (120)
                 } as any
               }
-              className="group relative flex items-center  justify-center gap-5 rounded-3xl border border-[hsl(var(--hue),70%,90%)] bg-[hsl(var(--hue),70%,97%)] py-2 pl-5 pr-20 text-[hsl(var(--hue),70%,20%)]"
+              className="group relative flex items-center justify-center gap-5 rounded-3xl border border-[hsl(var(--hue),70%,90%)] bg-[hsl(var(--hue),70%,95%)] py-2 pl-4 pr-20 text-[hsl(var(--hue),70%,20%)] shadow-[0px_19px_16px_0px_rgba(255,255,255,0.50)_inset,0px_4px_8px_0px_rgba(0,0,0,0.12),0px_0px_0px_1px_hsl(var(--hue),70%,80%)_inset,0px_4px_1px_0px_rgba(255,255,255,0.25)_inset,0px_-2px_3px_0px_rgba(0,0,0,0.25)_inset]"
             >
               Conversion{" "}
               <div
