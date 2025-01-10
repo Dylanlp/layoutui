@@ -158,7 +158,7 @@ export default function IndexPage() {
             <Icons.logo className="h-3 w-3" />
             Built with shadcn/ui
           </Link>
-          <h1 className=" flex flex-col lg:flex-row  items-center justify-center gap-3 text-6xl font-semibold tracking-tighter">
+          <h1 className=" flex flex-col items-center  justify-center gap-3 text-6xl font-semibold tracking-tighter lg:flex-row">
             Components for{" "}
             <span
               style={
@@ -181,7 +181,7 @@ export default function IndexPage() {
                 <div className="relative h-7 w-full overflow-hidden">
                   <div
                     key={count}
-                    className="animate-scroll-down absolute inset-0 flex flex-col items-center"
+                    className="absolute inset-0 flex animate-scroll-down flex-col items-center"
                     style={{
                       height: "84px",
                     }}
@@ -371,7 +371,7 @@ export default function IndexPage() {
 
             <OutlineCard title="Cursors CTA" size="lg">
               <div className="flex items-center justify-center px-12">
-                <div className="relative flex flex-col items-center justify-center gap-8 rounded-3xl bg-muted/50 py-14 px-20 text-center">
+                <div className="relative flex flex-col items-center justify-center gap-8 rounded-3xl bg-muted/50 px-20 py-14 text-center">
                   <MultiplayerCursor name="Dylan" />
                   <MultiplayerCursor name="Marc" color="red" />
                   <MultiplayerCursor name="Sara" color="blue" />
