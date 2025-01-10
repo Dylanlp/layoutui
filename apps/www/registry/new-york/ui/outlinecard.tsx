@@ -6,7 +6,7 @@ interface OutlineCardProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string
   className?: string
   contentClassName?: string
-  size?: "default" | "lg" | "sm"
+  size?: "default" | "lg" | "sm" | "xl"
 }
 
 export function OutlineCard({
@@ -22,11 +22,13 @@ export function OutlineCard({
       className={cn(
         "flex w-full flex-col rounded-3xl border-[0.5px] border-border/60",
         size === "lg"
-          ? "col-span-1 lg:col-span-2 h-[560px]"
+          ? "col-span-1 h-[560px] lg:col-span-2"
           : size === "default"
           ? "h-96"
           : size === "sm"
           ? "h-72"
+          : size === "xl"
+          ? "h-auto lg:col-span-2"
           : "h-40",
         className
       )}

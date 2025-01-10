@@ -126,6 +126,7 @@ const testimonials = [
 
 export default function IndexPage() {
   const [count, setCount] = useState(0)
+  const [isExpanded, setIsExpanded] = useState(false)
   const targetValue = 49.6
   const duration = 2000
   const steps = 30
@@ -436,59 +437,86 @@ export default function IndexPage() {
                 </div>
               </div>
             </OutlineCard>
-            <OutlineCard size="lg" title="Founders Note">
-              <div className="mx-auto flex max-w-md flex-col gap-8 rounded-2xl border-[0.5px] border-border/60 bg-white p-10 shadow-sm">
-                <div className="flex flex-col gap-4 text-pretty ">
-                  <p className="text-md font-medium text-foreground">
-                    Out of the 12+ million landing pages online, only 8% will
-                    convert more than 1% of visitors.
-                  </p>
+            <OutlineCard size="xl" title="Founders Note">
+              <div
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="relative mx-auto flex max-w-md cursor-pointer flex-col gap-8 rounded-3xl border-[0.5px] border-border/60 bg-white p-10 shadow-sm transition-all duration-300 hover:shadow-md"
+              >
+                <div className="relative flex flex-col gap-4 text-pretty">
+                  <div>
+                    <p className="text-md font-medium text-foreground">
+                      Out of the 12+ million landing pages online, only 8% will
+                      convert more than 1% of visitors.
+                    </p>
 
-                  <p className="text-sm text-muted-foreground">
-                    Yup - while it&apos;s easier than ever to build a landing
-                    page, it&apos;s harder than ever to make it convert.
-                  </p>
+                    <p className="mt-4 text-sm text-muted-foreground">
+                      Yup - while it&apos;s easier than ever to build a landing
+                      page, it&apos;s harder than ever to make it convert.
+                    </p>
 
-                  <p className="text-sm text-muted-foreground">
-                    Most landing pages have two challenges with conversion:
-                    <br />
-                    <br />
-                    1. Getting visitors to take the first action
-                    <br />
-                    2. Getting those who do to come back
-                  </p>
+                    {!isExpanded && (
+                      <div className="absolute bottom-0 h-24 w-full bg-gradient-to-t from-white to-transparent" />
+                    )}
+                  </div>
 
-                  <p className="text-sm text-muted-foreground">
-                    That&apos;s why I built Layout UI - to give developers and
-                    startups the components they need to build high-converting
-                    pages.
-                  </p>
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{
+                      height: isExpanded ? "auto" : 0,
+                      opacity: isExpanded ? 1 : 0,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 20,
+                    }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    <div className="flex flex-col gap-4 pt-4">
+                      <p className="text-sm text-muted-foreground">
+                        Most landing pages have two challenges with conversion:
+                        <br />
+                        <br />
+                        1. Getting visitors to take the first action
+                        <br />
+                        2. Getting those who do to come back
+                      </p>
 
-                  <p className="text-sm text-muted-foreground">
-                    In the last 7 years, I&apos;ve helped startups increase
-                    conversion with optimized landing pages. I&apos;d love for
-                    you to give these components a try.
-                  </p>
+                      <p className="text-sm text-muted-foreground">
+                        That&apos;s why I built Layout UI - to give developers
+                        and startups the components they need to build
+                        high-converting pages.
+                      </p>
+
+                      <p className="text-sm text-muted-foreground">
+                        In the last 7 years, I&apos;ve helped startups increase
+                        conversion with optimized landing pages. I&apos;d love
+                        for you to give these components a try.
+                      </p>
+                    </div>
+                  </motion.div>
                 </div>
 
-                <div className="flex items-center gap-6">
-                  <div className="relative flex h-10 w-10 items-center">
-                    <img
-                      src="https://github.com/shadcn.png"
-                      alt="dylan"
-                      className="h-10 w-10 rounded-full"
-                    />
-                    <img
-                      src="/signature.svg"
-                      alt="dylan"
-                      className="absolute -bottom-1 -right-4 min-w-12"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-0.5">
-                    <p className="text-sm font-medium leading-4">Dylan</p>
-                    <p className="text-sm leading-4 text-muted-foreground">
-                      Founder, Layout UI
-                    </p>
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-6">
+                    <div className="relative flex h-10 w-10 items-center">
+                      <img
+                        src="https://github.com/shadcn.png"
+                        alt="dylan"
+                        className="h-10 w-10 rounded-full"
+                      />
+                      <img
+                        src="/signature.svg"
+                        alt="dylan"
+                        className="absolute -bottom-1 -right-4 min-w-12"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <p className="text-sm font-medium leading-4">Dylan</p>
+                      <p className="text-sm leading-4 text-muted-foreground">
+                        Founder, Layout UI
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
