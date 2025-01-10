@@ -52,6 +52,11 @@ import {
   Username,
 } from "@/registry/new-york/ui/testimonial"
 import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/registry/new-york/ui/tooltip"
+import {
   VerticalTestimonial,
   VerticalTestimonialAvatar,
   VerticalTestimonialContent,
@@ -65,7 +70,7 @@ const testimonials = [
   {
     name: "Sarah Chen",
     username: "@sarahdesigns",
-    avatar: "https://github.com/shadcn.png",
+    avatar: "/faces/15.jpg",
     date: "Mar 15, 2024",
     content: {
       prefix: "These components have transformed our",
@@ -76,7 +81,7 @@ const testimonials = [
   {
     name: "Marcus Rodriguez",
     username: "@marcusdev",
-    avatar: "https://github.com/shadcn.png",
+    avatar: "/faces/80.jpg",
     date: "Mar 15, 2024",
     content: {
       prefix: "Implementing these components",
@@ -87,7 +92,7 @@ const testimonials = [
   {
     name: "Emma Thompson",
     username: "@emmacodes",
-    avatar: "https://github.com/shadcn.png",
+    avatar: "/faces/101.jpg",
     date: "Mar 15, 2024",
     content: {
       prefix: "The accessibility features are built in.",
@@ -98,7 +103,7 @@ const testimonials = [
   {
     name: "Alex Kumar",
     username: "@alexk",
-    avatar: "https://github.com/shadcn.png",
+    avatar: "/faces/99.jpg",
     date: "Mar 15, 2024",
     content: {
       prefix: "The TypeScript integration is flawless.",
@@ -109,7 +114,7 @@ const testimonials = [
   {
     name: "Jordan Lee",
     username: "@jordanl",
-    avatar: "https://github.com/shadcn.png",
+    avatar: "/faces/59.jpg",
     date: "Mar 15, 2024",
     content: {
       prefix: "We've seen a",
@@ -261,10 +266,10 @@ export default function IndexPage() {
               {" "}
               <div className="flex h-full w-full items-center justify-center">
                 <Stars count={500} text="Loved by">
-                  <StarImage src="https://github.com/shadcn.png" />
-                  <StarImage src="https://github.com/shadcn.png" />
-                  <StarImage src="https://github.com/shadcn.png" />
-                  <StarImage src="https://github.com/shadcn.png" />
+                  <StarImage src="/faces/9.jpg" />
+                  <StarImage src="/faces/2.jpg" />
+                  <StarImage src="/faces/3.jpg" />
+                  <StarImage src="/faces/28.jpg" />
                 </Stars>
               </div>
             </OutlineCard>
@@ -274,7 +279,7 @@ export default function IndexPage() {
               <div className="flex h-full w-full items-center justify-center">
                 <TestimonialCard>
                   <TestimonialHeader>
-                    <TestimonialAvatar src={testimonials[0].avatar} />
+                    <TestimonialAvatar src="/faces/48.jpg" />
                     <TestimonialInfo>
                       <Name>{testimonials[0].name}</Name>
                       <Username>{testimonials[0].username}</Username>
@@ -337,7 +342,7 @@ export default function IndexPage() {
                 </VerticalTestimonialContent>
 
                 <div className="flex flex-col items-center gap-2">
-                  <VerticalTestimonialAvatar src="https://github.com/shadcn.png" />
+                  <VerticalTestimonialAvatar src="/faces/105.jpg" />
                   <VerticalTestimonialInfo>
                     <VerticalTestimonialName>Name</VerticalTestimonialName>
                     <VerticalTestimonialRole>
@@ -387,7 +392,107 @@ export default function IndexPage() {
                 </div>
               </div>
             </OutlineCard>
-            <OutlineCard size="lg" title="Founders Note"></OutlineCard>
+            <OutlineCard title="Users CTA" size="lg">
+              <div className="flex items-center justify-center px-12">
+                <div className="relative flex flex-col items-center justify-center gap-8 rounded-3xl bg-muted/50 px-20 py-14 text-center">
+                  <div className="group flex max-w-[400px] flex-wrap items-center justify-center gap-1">
+                    {Array.from({ length: 40 }).map((_, index) => (
+                      <Tooltip key={index}>
+                        <TooltipTrigger>
+                          <img
+                            src={`/faces/${index + 1}.jpg`}
+                            alt={`user ${index + 1}`}
+                            className="h-6 w-6 rounded-md transition-opacity duration-200 group-hover:[&:not(:hover)]:opacity-30"
+                          />
+                        </TooltipTrigger>
+                        <TooltipContent className=" scale-90 bg-transparent p-0 shadow-lg">
+                          <TestimonialCard>
+                            <TestimonialHeader>
+                              {/* <TestimonialAvatar src="https://github.com/shadcn.png" /> */}
+                              <TestimonialInfo>
+                                <Name>Name</Name>
+                                <Username>@username</Username>
+                              </TestimonialInfo>
+                            </TestimonialHeader>
+                            <TestimonialContent>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Quisquam, quos.
+                            </TestimonialContent>
+                            {/* <TestimonialDate>Date</TestimonialDate> */}
+                          </TestimonialCard>
+                        </TooltipContent>
+                      </Tooltip>
+                    ))}
+                  </div>
+                  <div className="flex flex-col items-center justify-center gap-1">
+                    <h2 className="text-balance text-3xl font-semibold leading-tight tracking-tighter">
+                      Get Started with Layout UI
+                    </h2>
+                    <p className="text-md text-balance text-muted-foreground">
+                      Layout UI is a free and open source library.
+                    </p>
+                  </div>
+                  <Button className="rounded-full">Get Started</Button>
+                </div>
+              </div>
+            </OutlineCard>
+            <OutlineCard size="lg" title="Founders Note">
+              <div className="mx-auto flex max-w-md flex-col gap-8 rounded-2xl border-[0.5px] border-border/60 bg-white p-10 shadow-sm">
+                <div className="flex flex-col gap-4 text-pretty ">
+                  <p className="text-md font-medium text-foreground">
+                    Out of the 12+ million landing pages online, only 8% will
+                    convert more than 1% of visitors.
+                  </p>
+
+                  <p className="text-sm text-muted-foreground">
+                    Yup - while it&apos;s easier than ever to build a landing
+                    page, it&apos;s harder than ever to make it convert.
+                  </p>
+
+                  <p className="text-sm text-muted-foreground">
+                    Most landing pages have two challenges with conversion:
+                    <br />
+                    <br />
+                    1. Getting visitors to take the first action
+                    <br />
+                    2. Getting those who do to come back
+                  </p>
+
+                  <p className="text-sm text-muted-foreground">
+                    That&apos;s why I built Layout UI - to give developers and
+                    startups the components they need to build high-converting
+                    pages.
+                  </p>
+
+                  <p className="text-sm text-muted-foreground">
+                    In the last 7 years, I&apos;ve helped startups increase
+                    conversion with optimized landing pages. I&apos;d love for
+                    you to give these components a try.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-6">
+                  <div className="relative flex h-10 w-10 items-center">
+                    <img
+                      src="https://github.com/shadcn.png"
+                      alt="dylan"
+                      className="h-10 w-10 rounded-full"
+                    />
+                    <img
+                      src="/signature.svg"
+                      alt="dylan"
+                      className="absolute -bottom-1 -right-4 min-w-12"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <p className="text-sm font-medium leading-4">Dylan</p>
+                    <p className="text-sm leading-4 text-muted-foreground">
+                      Founder, Layout UI
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </OutlineCard>
           </div>
         </div>
         <div className="mx-auto flex max-w-md flex-col items-center justify-center rounded-2xl border-[0.5px] border-border/60 bg-white p-10 shadow-sm">
