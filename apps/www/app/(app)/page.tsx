@@ -127,6 +127,8 @@ const testimonials = [
 export default function IndexPage() {
   const [count, setCount] = useState(0)
   const [isExpanded, setIsExpanded] = useState(false)
+  const [achievementResetKey, setAchievementResetKey] = useState(0)
+  const [testimonialResetKey, setTestimonialResetKey] = useState(0)
   const targetValue = 49.6
   const duration = 2000
   const steps = 30
@@ -249,15 +251,27 @@ export default function IndexPage() {
             </TabsList>
           </Tabs> */}
           <div className="mx-auto grid w-full max-w-screen-lg grid-cols-1 gap-3 pb-8 lg:grid-cols-2">
-            <OutlineCard title="Achievements" size="sm">
+            <OutlineCard
+              title="Achievements"
+              size="sm"
+              className="group relative"
+            >
               <div className="flex h-full w-full items-center justify-center gap-8">
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  className="absolute right-4 top-4 rounded-full opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  onClick={() => setAchievementResetKey((key) => key + 1)}
+                >
+                  <RotateCwIcon className="h-4 w-4 transition-transform duration-200" />
+                </Button>
                 <Achievements>
                   <Achievement>
-                    <Stat>12000</Stat>
+                    <Stat resetKey={achievementResetKey}>12000</Stat>
                     <Metric>Users</Metric>
                   </Achievement>
                   <Achievement>
-                    <Stat>200</Stat>
+                    <Stat resetKey={achievementResetKey}>200</Stat>
                     <Metric>Downloads</Metric>
                   </Achievement>
                 </Achievements>
@@ -333,10 +347,21 @@ export default function IndexPage() {
               </div>
             </OutlineCard>
 
-            <OutlineCard title="Vertical Testimonial">
+            <OutlineCard
+              title="Vertical Testimonial"
+              className="group relative"
+            >
+              <Button
+                size="icon"
+                variant="ghost"
+                className="absolute right-4 top-4 rounded-full opacity-0 transition-all duration-200 group-hover:opacity-100"
+                onClick={() => setTestimonialResetKey((key) => key + 1)}
+              >
+                <RotateCwIcon className="h-4 w-4 transition-transform duration-200" />
+              </Button>
               <VerticalTestimonial>
                 <VerticalTestimonialContent>
-                  <VerticalTestimonialHighlight>
+                  <VerticalTestimonialHighlight resetKey={testimonialResetKey}>
                     Lorem ipsum dolor sit amet
                   </VerticalTestimonialHighlight>{" "}
                   consectetur adipisicing elit. Quisquam, quos.

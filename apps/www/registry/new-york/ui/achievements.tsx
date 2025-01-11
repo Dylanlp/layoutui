@@ -17,6 +17,7 @@ interface AchievementProps extends React.HTMLAttributes<HTMLDivElement> {
 
 interface StatProps extends React.HTMLAttributes<HTMLParagraphElement> {
   children: React.ReactNode
+  resetKey?: number
 }
 
 interface MetricProps extends React.HTMLAttributes<HTMLParagraphElement> {
@@ -105,10 +106,9 @@ const Achievement = React.forwardRef<HTMLDivElement, AchievementProps>(
 Achievement.displayName = "Achievement"
 
 const Stat = React.forwardRef<HTMLParagraphElement, StatProps>(
-  ({ className, children, ...props }, ref) => {
+  ({ className, children, resetKey = 0, ...props }, ref) => {
     const countingRef = React.useRef<HTMLParagraphElement>(null)
-    const isInView = useInView(countingRef, { once: true })
-    const [hasAnimated, setHasAnimated] = React.useState(false)
+    const isInView = useInView(countingRef, { once: false })
 
     const targetValue = React.useMemo(() => {
       if (typeof children === "string" || typeof children === "number") {
@@ -121,8 +121,6 @@ const Stat = React.forwardRef<HTMLParagraphElement, StatProps>(
       mass: 0.8,
       stiffness: 100,
       damping: 30,
-      restDelta: 0.5,
-      restSpeed: 0.5,
     })
 
     const display = useTransform(spring, (current) =>
@@ -130,11 +128,18 @@ const Stat = React.forwardRef<HTMLParagraphElement, StatProps>(
     )
 
     React.useEffect(() => {
-      if (isInView && !hasAnimated && targetValue > 0) {
+      if (isInView) {
         spring.set(targetValue)
-        setHasAnimated(true)
       }
-    }, [isInView, targetValue, spring, hasAnimated])
+    }, [isInView, targetValue, spring])
+
+    React.useEffect(() => {
+      spring.stop()
+      spring.jump(0)
+      if (isInView) {
+        spring.set(targetValue)
+      }
+    }, [resetKey, spring, targetValue, isInView])
 
     return (
       <motion.p
@@ -148,7 +153,7 @@ const Stat = React.forwardRef<HTMLParagraphElement, StatProps>(
           className
         )}
       >
-        {hasAnimated ? display : formatNumber(targetValue)}
+        {display}
       </motion.p>
     )
   }

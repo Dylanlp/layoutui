@@ -49,12 +49,35 @@ const VerticalTestimonialContent = React.forwardRef<
 VerticalTestimonialContent.displayName = "VerticalTestimonialContent"
 
 // VerticalTestimonialHighlight
+interface VerticalTestimonialHighlightProps
+  extends React.HTMLAttributes<HTMLSpanElement> {
+  children: React.ReactNode
+  resetKey?: number
+}
+
 const VerticalTestimonialHighlight = React.forwardRef<
   HTMLSpanElement,
-  React.HTMLAttributes<HTMLSpanElement>
->(({ className, children, ...props }, ref) => {
+  VerticalTestimonialHighlightProps
+>(({ className, children, resetKey = 0, ...props }, ref) => {
   const highlightRef = React.useRef(null)
-  const isInView = useInView(highlightRef, { once: true })
+  const isInView = useInView(highlightRef, { once: false })
+  const [shouldAnimate, setShouldAnimate] = React.useState(false)
+
+  React.useEffect(() => {
+    if (isInView) {
+      setShouldAnimate(true)
+    }
+  }, [isInView])
+
+  React.useEffect(() => {
+    setShouldAnimate(false)
+    const timer = setTimeout(() => {
+      if (isInView) {
+        setShouldAnimate(true)
+      }
+    }, 50)
+    return () => clearTimeout(timer)
+  }, [resetKey, isInView])
 
   return (
     <span
@@ -66,7 +89,7 @@ const VerticalTestimonialHighlight = React.forwardRef<
       <span
         className={cn(
           "absolute inset-0 bg-gradient-to-r from-yellow-100 from-50% to-yellow-100/20",
-          isInView && "animate-highlight"
+          shouldAnimate && "animate-highlight"
         )}
         aria-hidden="true"
       />
