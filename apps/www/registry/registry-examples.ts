@@ -14,6 +14,13 @@ export const examples: Registry = [
     files: ["example/achievements-demo.tsx"],
   },
   {
+    name: "stars-demo",
+    type: "registry:example",
+    registryDependencies: ["achievements"],
+    files: ["example/achievements-demo.tsx"],
+  },
+
+  {
     name: "alert-demo",
     type: "registry:example",
     registryDependencies: ["alert"],
