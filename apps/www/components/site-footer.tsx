@@ -13,8 +13,34 @@ export function SiteFooter() {
             className="font-medium underline underline-offset-4"
           >
             Dylan
+          </a>{" "}
+          using{" "}
+          <a
+            href="https://ui.shadcn.com"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            shadcn/ui
           </a>
-          
+          ,{" "}
+          <a
+            href="https://www.tailwindcss.com"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            Tailwind CSS
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://motion.dev/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            Motion
+          </a>
           {/* <a
             href={siteConfig.links.github}
             target="_blank"

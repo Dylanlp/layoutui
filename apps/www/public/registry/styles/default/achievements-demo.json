@@ -1,0 +1,13 @@
+{
+  "name": "achievements-demo",
+  "type": "registry:example",
+  "registryDependencies": ["achievements"],
+  "files": [
+    {
+      "path": "example/achievements-demo.tsx",
+      "content": "import {\n  Achievement,\n  Achievements,\n  Metric,\n  Stat,\n} from \"@/registry/default/ui/achievements\"\n\nexport default function AchievementsDemo() {\n  return (\n    <Achievements>\n      <Achievement>\n        <Stat>10000</Stat>\n        <Metric>Downloads</Metric>\n      </Achievement>\n      <Achievement>\n        <Stat>1000</Stat>\n        <Metric>Stars</Metric>\n      </Achievement>\n      <Achievement>\n        <Stat>500</Stat>\n        <Metric>Contributors</Metric>\n      </Achievement>\n    </Achievements>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

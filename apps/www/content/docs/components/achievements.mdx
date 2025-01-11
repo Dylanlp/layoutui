@@ -1,0 +1,71 @@
+---
+title: Achievements
+description: A decorative component for displaying animated statistics and metrics.
+component: true
+---
+
+<ComponentPreview
+  name="achievements-demo"
+  title="An achievements component with animated statistics."
+  description="An achievements component showing animated statistics with decorative borders. The statistics show numbers that animate when in view."
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx add shadcn@latest https://www.layout.software/r/styles/default/achievements.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="achievements" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+  Achievement,
+  Achievements,
+  Metric,
+  Stat,
+} from "@/components/ui/achievements"
+```
+
+```tsx
+<Achievements>
+  <Achievement>
+    <Stat>10000</Stat>
+    <Metric>Downloads</Metric>
+  </Achievement>
+  <Achievement>
+    <Stat>1000</Stat>
+    <Metric>Stars</Metric>
+  </Achievement>
+  <Achievement>
+    <Stat>500</Stat>
+    <Metric>Contributors</Metric>
+  </Achievement>
+</Achievements>
+```

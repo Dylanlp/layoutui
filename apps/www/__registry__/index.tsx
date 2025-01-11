@@ -681,6 +681,21 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
+    "achievements-demo": {
+      name: "achievements-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["Achievments"],
+      files: ["registry/new-york/example/achievements-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/achievements-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+
     "alert-demo": {
       name: "alert-demo",
       description: "",
@@ -5293,6 +5308,21 @@ export const Index: Record<string, any> = {
       files: ["registry/default/example/stars-demo.tsx"],
       component: React.lazy(
         () => import("@/registry/default/example/stars-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+
+    "achievements-demo": {
+      name: "achievements-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: ["registry/default/example/achievements-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/achievements-demo.tsx")
       ),
       source: "",
       category: "",

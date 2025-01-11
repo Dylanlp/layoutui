@@ -72,33 +72,33 @@ export const docsConfig: DocsConfig = {
 
         {
           title: "Achievements",
-          href: "/docs/components/alert",
+          href: "/docs/components/achievements",
           items: [],
         },
         {
           title: "Testimonial Card",
-          href: "/docs/components/alert",
+          href: "/docs/components/testimonialcard",
           items: [],
         },
         {
           title: "Testimonial Carousel",
-          href: "/docs/components/alert",
+          href: "/docs/components/testimonialcarousel",
           items: [],
         },
         {
           title: "Vertical Testimonial",
-          href: "/docs/components/alert",
+          href: "/docs/components/verticaltestimonial",
           items: [],
         },
         {
           title: "Logo Grid",
-          href: "/docs/components/alert",
+          href: "/docs/components/logogrid",
           items: [],
         },
-       
+
         {
           title: "Founders Note",
-          href: "/docs/components/alert",
+          href: "/docs/components/foundersnote",
           items: [],
         },
 
@@ -352,7 +352,6 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/alert",
           items: [],
         },
-        
       ],
     },
   ],
