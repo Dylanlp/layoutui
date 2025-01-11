@@ -685,7 +685,7 @@ export const Index: Record<string, any> = {
       name: "achievements-demo",
       description: "",
       type: "registry:example",
-      registryDependencies: ["Achievments"],
+      registryDependencies: ["Achievements"],
       files: ["registry/new-york/example/achievements-demo.tsx"],
       component: React.lazy(
         () => import("@/registry/new-york/example/achievements-demo.tsx")

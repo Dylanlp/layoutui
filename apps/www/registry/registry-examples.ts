@@ -8,10 +8,10 @@ export const examples: Registry = [
     files: ["example/accordion-demo.tsx"],
   },
   {
-    name: "achievments-demo",
+    name: "achievements-demo",
     type: "registry:example",
-    registryDependencies: ["achievments"],
-    files: ["example/achievments-demo.tsx"],
+    registryDependencies: ["achievements"],
+    files: ["example/achievements-demo.tsx"],
   },
   {
     name: "alert-demo",
