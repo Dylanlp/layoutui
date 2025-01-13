@@ -769,7 +769,7 @@ export const Index: Record<string, any> = {
       name: "texticons-demo",
       description: "",
       type: "registry:example",
-      registryDependencies: ["texticons"],
+      registryDependencies: ["text-icons"],
       files: ["registry/new-york/example/texticons-demo.tsx"],
       component: React.lazy(
         () => import("@/registry/new-york/example/texticons-demo.tsx")
@@ -5457,7 +5457,7 @@ export const Index: Record<string, any> = {
       name: "texticons-demo",
       description: "",
       type: "registry:example",
-      registryDependencies: ["texticons"],
+      registryDependencies: ["text-icons"],
       files: ["registry/default/example/texticons-demo.tsx"],
       component: React.lazy(
         () => import("@/registry/default/example/texticons-demo.tsx")
@@ -5467,6 +5467,7 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
+    
 
 
     "alert-demo": {
