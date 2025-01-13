@@ -1,6 +1,6 @@
 ---
 title: Stars
-description: A vertically stacked set of interactive headings that each reveal a section of content.
+description: Social proof 
 component: true
 links:
 ---
@@ -81,9 +81,14 @@ module.exports = {
 ## Usage
 
 ```tsx
-import Stars from "@/components/ui/stars"
+import { Stars, StarImage } from "@/components/ui/stars"
 ```
 
 ```tsx
-<Stars count={400} text="Trusted by" />
+<Stars count={400} text="Trusted by">
+  <StarImage src="/faces/9.jpg" />
+  <StarImage src="/faces/2.jpg" />
+  <StarImage src="/faces/3.jpg" />
+  <StarImage src="/faces/28.jpg" />
+</Stars>
 ```

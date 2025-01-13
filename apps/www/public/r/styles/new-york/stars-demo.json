@@ -5,7 +5,7 @@
   "files": [
     {
       "path": "example/stars-demo.tsx",
-      "content": "import Stars from \"@/registry/default/ui/stars\"\n\nexport default function StarsDemo() {\n  return <Stars count={400} text=\"Trusted by\" />\n}\n",
+      "content": "import { StarImage, Stars } from \"@/registry/new-york/ui/stars\"\n\nexport default function StarsDemo() {\n  return <Stars count={400} text=\"Trusted by\">\n    <StarImage src=\"/faces/9.jpg\" />\n    <StarImage src=\"/faces/2.jpg\" />\n    <StarImage src=\"/faces/3.jpg\" />\n    <StarImage src=\"/faces/28.jpg\" />\n  </Stars>\n}\n",
       "type": "registry:example",
       "target": ""
     }

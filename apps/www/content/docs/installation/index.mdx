@@ -3,40 +3,66 @@ title: Installation
 description: How to install dependencies and structure your app.
 ---
 
-## TypeScript
+Layout UI is built on top of shadcn/ui, extending it with beautiful animations and advanced components. Follow these steps to set up your project.
 
-This project and the components are written in TypeScript. We recommend using TypeScript for your project as well.
+## Setup
 
-However we provide a JavaScript version of the components as well. The JavaScript version is available via the [cli](/docs/cli).
+### Create a new Next.js project with shadcn/ui
 
-To opt-out of TypeScript, you can use the `tsx` flag in your `components.json` file.
+First, create a new Next.js project and initialize shadcn/ui:
 
-```json {10} title="components.json"
-{
-  "style": "default",
-  "tailwind": {
-    "config": "tailwind.config.js",
-    "css": "src/app/globals.css",
-    "baseColor": "zinc",
-    "cssVariables": true
-  },
-  "rsc": false,
-  "tsx": false,
-  "aliases": {
-    "utils": "~/lib/utils",
-    "components": "~/components"
-  }
-}
+```bash
+pnpm dlx shadcn@latest init
 ```
 
-To configure import aliases, you can use the following `jsconfig.json`:
+You can use the `-d` flag for default settings (New York style, Zinc color, and CSS variables):
 
-```json {4} title="jsconfig.json"
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"]
-    }
-  }
-}
+```bash
+pnpm dlx shadcn@latest init -d
 ```
+
+### Configure components.json
+
+When running the init command, you'll be asked to configure your components.json:
+
+```bash
+- Which style would you like to use? › Default
+- Which color would you like to use as base color? › Gray
+- Do you want to use CSS variables for colors? › yes
+```
+
+### Install additional dependencies
+
+Layout UI requires some additional dependencies for animations and advanced features:
+
+```bash
+pnpm add framer-motion
+pnpm add tailwindcss-animate
+pnpm add lucide-react
+```
+
+### Install base shadcn/ui components
+
+Layout UI builds on top of several shadcn/ui base components. Install them:
+
+```bash
+pnpm dlx shadcn@latest add button
+pnpm dlx shadcn@latest add card
+pnpm dlx shadcn@latest add dialog
+pnpm dlx shadcn@latest add separator
+```
+
+### Install Layout UI components
+
+Finally, install Layout UI components:
+
+```bash
+pnpm dlx shadcn@latest add "https://www.layoutui.tech/r/styles/default/stars.json"
+```
+
+## Next Steps
+
+Now that you have Layout UI set up, you can start using our animated components:
+
+- Browse the components section to see our extended component collection
+- Check out our sections for example layouts
