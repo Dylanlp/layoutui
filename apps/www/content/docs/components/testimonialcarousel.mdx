@@ -1,0 +1,114 @@
+---
+title: Testimonial Carousel
+description: A carousel component for displaying multiple testimonials with smooth scrolling and hover pause.
+component: true
+links:
+---
+
+<ComponentPreview
+  name="testimonialcarousel-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+  description="A carousel of testimonials with smooth scrolling and hover pause"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx add shadcn@latest https://www.layout.software/r/styles/default/testimonialcarousel.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install framer-motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="testimonialcarousel" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+  Name,
+  TestimonialAvatar,
+  TestimonialCard,
+  TestimonialCarousel,
+  TestimonialContent,
+  TestimonialDate,
+  TestimonialHeader,
+  TestimonialHighlight,
+  TestimonialInfo,
+  TestimonialStars,
+  Username,
+} from "@/components/ui/testimonial"
+```
+
+```tsx
+<TestimonialCarousel>
+  <TestimonialCard>
+    <TestimonialHeader>
+      <TestimonialAvatar src="/avatars/01.png" alt="User avatar" />
+      <TestimonialInfo>
+        <Name>John Doe</Name>
+        <Username>@johndoe</Username>
+      </TestimonialInfo>
+    </TestimonialHeader>
+    <TestimonialStars />
+    <TestimonialContent>
+      This product is <TestimonialHighlight>amazing</TestimonialHighlight>! It
+      has completely transformed how I work.
+    </TestimonialContent>
+    <TestimonialDate>2 days ago</TestimonialDate>
+  </TestimonialCard>
+  <TestimonialCard>
+    <TestimonialHeader>
+      <TestimonialAvatar src="/avatars/02.png" alt="User avatar" />
+      <TestimonialInfo>
+        <Name>Jane Smith</Name>
+        <Username>@janesmith</Username>
+      </TestimonialInfo>
+    </TestimonialHeader>
+    <TestimonialStars />
+    <TestimonialContent>
+      The <TestimonialHighlight>user experience</TestimonialHighlight> is
+      outstanding. Highly recommended!
+    </TestimonialContent>
+    <TestimonialDate>1 week ago</TestimonialDate>
+  </TestimonialCard>
+</TestimonialCarousel>
+```
+
+## Props
+
+### TestimonialCarousel
+
+The carousel component accepts the following props:
+
+- `speed` (optional): Duration in seconds for one complete cycle. Defaults to 30.
+- `pauseOnHover` (optional): Whether to pause the carousel on hover. Defaults to true.
+- `direction` (optional): The scroll direction, either "ltr" or "rtl". Defaults to "ltr".

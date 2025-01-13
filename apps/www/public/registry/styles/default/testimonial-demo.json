@@ -1,0 +1,13 @@
+{
+  "name": "testimonial-demo",
+  "type": "registry:example",
+  "registryDependencies": ["testimonial"],
+  "files": [
+    {
+      "path": "example/testimonial-demo.tsx",
+      "content": "import {\n  Name,\n  TestimonialAvatar,\n  TestimonialCard,\n  TestimonialContent,\n  TestimonialDate,\n  TestimonialHeader,\n  TestimonialHighlight,\n  TestimonialInfo,\n  TestimonialStars,\n  Username,\n} from \"@/registry/default/ui/testimonial\"\n\nexport default function TestimonialDemo() {\n  return (\n    <TestimonialCard>\n      <TestimonialHeader>\n        <TestimonialAvatar src=\"/faces/1.jpg\" alt=\"Sarah Wilson\" />\n        <TestimonialInfo>\n          <Name>Sarah Wilson</Name>\n          <Username>@sarahw</Username>\n        </TestimonialInfo>\n      </TestimonialHeader>\n      <TestimonialStars />\n      <TestimonialContent>\n        The <TestimonialHighlight>attention to detail</TestimonialHighlight> and\n        user experience is outstanding. This is exactly what I've been looking\n        for!\n      </TestimonialContent>\n      <TestimonialDate>Posted 3 days ago</TestimonialDate>\n    </TestimonialCard>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -695,6 +695,34 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
+    "testimonial-demo": {
+      name: "testimonial-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["testimonial"],
+      files: ["registry/new-york/example/testimonial-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/testimonial-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "testimonialcarousel-demo": {
+      name: "testimonialcarousel-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["testimonial"],
+      files: ["registry/new-york/example/testimonialcarousel-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/testimonialcarousel-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
 
     "alert-demo": {
       name: "alert-demo",
@@ -5329,7 +5357,34 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
-
+    "testimonial-demo": {
+      name: "testimonial-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["testimonial"],
+      files: ["registry/default/example/testimonial-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/testimonial-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "testimonialcarousel-demo": {
+      name: "testimonialcarousel-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["testimonial"],
+      files: ["registry/default/example/testimonialcarousel-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/testimonialcarousel-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
     "alert-demo": {
       name: "alert-demo",
       description: "",

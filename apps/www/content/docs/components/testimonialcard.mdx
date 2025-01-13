@@ -1,0 +1,95 @@
+---
+title: Testimonial Card
+description: A card component for displaying testimonials with avatar, name, username, content, and optional stars.
+component: true
+links:
+---
+
+<ComponentPreview
+  name="testimonial-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+  description="A testimonial card with avatar, name, username, content, and stars"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx add shadcn@latest https://www.layout.software/r/styles/default/testimonial.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install framer-motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="testimonial" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+  Name,
+  TestimonialAvatar,
+  TestimonialCard,
+  TestimonialContent,
+  TestimonialDate,
+  TestimonialHeader,
+  TestimonialHighlight,
+  TestimonialInfo,
+  TestimonialStars,
+  Username,
+} from "@/components/ui/testimonial"
+```
+
+```tsx
+<TestimonialCard>
+  <TestimonialHeader>
+    <TestimonialAvatar src="/avatars/01.png" alt="User avatar" />
+    <TestimonialInfo>
+      <Name>John Doe</Name>
+      <Username>@johndoe</Username>
+    </TestimonialInfo>
+  </TestimonialHeader>
+  <TestimonialStars />
+  <TestimonialContent>
+    This product is <TestimonialHighlight>amazing</TestimonialHighlight>! It has
+    completely transformed how I work.
+  </TestimonialContent>
+  <TestimonialDate>2 days ago</TestimonialDate>
+</TestimonialCard>
+```
+
+You can also use the carousel component to display multiple testimonials:
+
+```tsx
+<TestimonialCarousel>
+  <TestimonialCard>{/* First testimonial */}</TestimonialCard>
+  <TestimonialCard>{/* Second testimonial */}</TestimonialCard>
+</TestimonialCarousel>
+```

@@ -19,7 +19,18 @@ export const examples: Registry = [
     registryDependencies: ["stars"],
     files: ["example/stars-demo.tsx"],
   },
-
+  {
+    name: "testimonial-demo",
+    type: "registry:example",
+    registryDependencies: ["testimonial"],
+    files: ["example/testimonial-demo.tsx"],
+  },
+  {
+    name: "testimonialcarousel-demo",
+    type: "registry:example",
+    registryDependencies: ["testimonial"],
+    files: ["example/testimonialcarousel-demo.tsx"],
+  },
   {
     name: "alert-demo",
     type: "registry:example",

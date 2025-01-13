@@ -1,0 +1,13 @@
+{
+  "name": "testimonialcarousel-demo",
+  "type": "registry:example",
+  "registryDependencies": ["testimonial"],
+  "files": [
+    {
+      "path": "example/testimonialcarousel-demo.tsx",
+      "content": "import {\n  Name,\n  TestimonialAvatar,\n  TestimonialCard,\n  TestimonialCarousel,\n  TestimonialContent,\n  TestimonialDate,\n  TestimonialHeader,\n  TestimonialHighlight,\n  TestimonialInfo,\n  TestimonialStars,\n  Username,\n} from \"@/registry/new-york/ui/testimonial\"\n\nexport default function TestimonialCarouselDemo() {\n  return (\n    <TestimonialCarousel>\n      <TestimonialCard>\n        <TestimonialHeader>\n          <TestimonialAvatar src=\"/faces/1.jpg\" alt=\"Sarah Wilson\" />\n          <TestimonialInfo>\n            <Name>Sarah Wilson</Name>\n            <Username>@sarahw</Username>\n          </TestimonialInfo>\n        </TestimonialHeader>\n        <TestimonialStars />\n        <TestimonialContent>\n          The <TestimonialHighlight>attention to detail</TestimonialHighlight> and\n          user experience is outstanding. This is exactly what I've been looking\n          for!\n        </TestimonialContent>\n        <TestimonialDate>Posted 3 days ago</TestimonialDate>\n      </TestimonialCard>\n      <TestimonialCard>\n        <TestimonialHeader>\n          <TestimonialAvatar src=\"/faces/2.jpg\" alt=\"Emily Chen\" />\n          <TestimonialInfo>\n            <Name>Emily Chen</Name>\n            <Username>@emilyc</Username>\n          </TestimonialInfo>\n        </TestimonialHeader>\n        <TestimonialStars />\n        <TestimonialContent>\n          I'm <TestimonialHighlight>impressed</TestimonialHighlight> by how\n          intuitive and well-designed this is. Makes my workflow so much smoother!\n        </TestimonialContent>\n        <TestimonialDate>Posted 1 week ago</TestimonialDate>\n      </TestimonialCard>\n      <TestimonialCard>\n        <TestimonialHeader>\n          <TestimonialAvatar src=\"/faces/3.jpg\" alt=\"Michael Brown\" />\n          <TestimonialInfo>\n            <Name>Michael Brown</Name>\n            <Username>@michaelb</Username>\n          </TestimonialInfo>\n        </TestimonialHeader>\n        <TestimonialStars />\n        <TestimonialContent>\n          The <TestimonialHighlight>customization options</TestimonialHighlight>{\" \"}\n          are fantastic. I can make it look exactly how I want!\n        </TestimonialContent>\n        <TestimonialDate>Posted 2 weeks ago</TestimonialDate>\n      </TestimonialCard>\n    </TestimonialCarousel>\n  )\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
