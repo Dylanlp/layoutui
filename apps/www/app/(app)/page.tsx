@@ -339,7 +339,7 @@ export default function IndexPage() {
             <OutlineCard title="Testimonial Carousel">
               {" "}
               <div className="flex h-full w-full items-center justify-center gap-4 pb-20">
-                <TestimonialCarousel>
+                <TestimonialCarousel direction="rtl">
                   {testimonials.map((testimonial, index) => (
                     <TestimonialCard key={index}>
                       <TestimonialHeader>
