@@ -1,10 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { RotateCwIcon } from "lucide-react"
+import { ArrowRight, RotateCwIcon, TextIcon } from "lucide-react"
+import Typed from "typed.js"
 
 import { siteConfig } from "@/config/site"
 import { Announcement } from "@/components/announcement"
@@ -71,7 +72,7 @@ const testimonials = [
     name: "Sarah Chen",
     username: "@sarahdesigns",
     avatar: "/faces/15.jpg",
-    date: "Mar 15, 2024",
+    date: "Mar 15, 2025",
     content: {
       prefix: "These components have transformed our",
       highlight: "design system's consistency by 300%",
@@ -82,7 +83,7 @@ const testimonials = [
     name: "Marcus Rodriguez",
     username: "@marcusdev",
     avatar: "/faces/80.jpg",
-    date: "Mar 15, 2024",
+    date: "Mar 15, 2025",
     content: {
       prefix: "Implementing these components",
       highlight: "cut our development cycle from 6 weeks to just 2",
@@ -93,7 +94,7 @@ const testimonials = [
     name: "Emma Thompson",
     username: "@emmacodes",
     avatar: "/faces/101.jpg",
-    date: "Mar 15, 2024",
+    date: "Mar 15, 2025",
     content: {
       prefix: "The accessibility features are built in.",
       highlight: "All components pass standards",
@@ -104,7 +105,7 @@ const testimonials = [
     name: "Alex Kumar",
     username: "@alexk",
     avatar: "/faces/99.jpg",
-    date: "Mar 15, 2024",
+    date: "Mar 15, 2025",
     content: {
       prefix: "The TypeScript integration is flawless.",
       highlight: "100% type coverage and zero runtime errors",
@@ -115,7 +116,7 @@ const testimonials = [
     name: "Jordan Lee",
     username: "@jordanl",
     avatar: "/faces/59.jpg",
-    date: "Mar 15, 2024",
+    date: "Mar 15, 2025",
     content: {
       prefix: "We've seen a",
       highlight: "40% increase in user engagement",
@@ -129,6 +130,25 @@ export default function IndexPage() {
   const [isExpanded, setIsExpanded] = useState(false)
   const [achievementResetKey, setAchievementResetKey] = useState(0)
   const [testimonialResetKey, setTestimonialResetKey] = useState(0)
+  const el = useRef(null)
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ["in minutes", "with ease", "like magic", "effortlessly"],
+      typeSpeed: 80,
+      backSpeed: 40,
+      backDelay: 1000,
+      loop: true,
+      showCursor: true,
+      cursorChar: "|",
+      startDelay: 500,
+    })
+
+    return () => {
+      typed.destroy()
+    }
+  }, [])
+
   const targetValue = 49.6
   const duration = 2000
   const steps = 30
@@ -546,10 +566,147 @@ export default function IndexPage() {
                 </div>
               </div>
             </OutlineCard>
+            <OutlineCard size="lg" title="Typing Hero">
+              <div className="w-full px-10">
+                <div className="flex w-full flex-col items-center justify-center gap-8 rounded-3xl bg-muted/50 py-14">
+                  <div className="flex flex-col items-center justify-center gap-4">
+                    <h2 className="text-balance text-6xl font-semibold leading-tight tracking-tighter">
+                      Get started{" "}
+                      <span ref={el} className="text-primary">
+                        in minutes
+                      </span>
+                    </h2>
+                    <p className="text-balance text-lg text-muted-foreground">
+                      Layout UI is a free and open source library.
+                    </p>
+                  </div>
+                  <Button className="rounded-full">Get Started</Button>
+                  <Achievements>
+                    <Achievement>
+                      <Stat>15000</Stat>
+                      <Metric>Users</Metric>
+                    </Achievement>
+                    <Achievement>
+                      <Stat>8500</Stat>
+                      <Metric>Stars</Metric>
+                    </Achievement>
+                    <Achievement>
+                      <Stat>25000</Stat>
+                      <Metric>Downloads</Metric>
+                    </Achievement>
+                  </Achievements>
+                </div>
+              </div>
+            </OutlineCard>
+            <OutlineCard size="lg" title="Text Icons">
+              <div className="w-full px-6">
+                <TextIcons>
+                  Build beautiful websites with{" "}
+                  <div className="flex h-11 items-center justify-center gap-2 rounded-full border border-border px-4">
+                    <p className="text-xl tracking-normal">Layout UI</p>
+                  </div>{" "}
+                  <br />
+                  Fully customizable{" "}
+                  <div className="group relative flex h-11  items-center justify-center gap-5 rounded-xl border border-[hsl(120,70%,90%)] bg-[hsl(120,70%,95%)] px-4 py-2 text-[hsl(120,70%,20%)] shadow-[0px_19px_16px_0px_rgba(255,255,255,0.50)_inset,0px_4px_8px_0px_rgba(0,0,0,0.12),0px_0px_0px_1px_hsl(120,70%,80%)_inset,0px_4px_1px_0px_rgba(255,255,255,0.25)_inset,0px_-2px_3px_0px_rgba(0,0,0,0.25)_inset]">
+                    <p className="text-sm tracking-normal">hand-crafted</p>
+                  </div>{" "}
+                  components
+                  <br />
+                  Open source and free to use{" "}
+                  <div className="group relative flex h-11 w-11 items-center justify-center gap-5 rounded-xl border border-[hsl(240,70%,90%)] bg-[hsl(240,70%,95%)] p-2 text-[hsl(240,70%,20%)] shadow-[0px_19px_16px_0px_rgba(255,255,255,0.50)_inset,0px_4px_8px_0px_rgba(0,0,0,0.12),0px_0px_0px_1px_hsl(240,70%,80%)_inset,0px_4px_1px_0px_rgba(255,255,255,0.25)_inset,0px_-2px_3px_0px_rgba(0,0,0,0.25)_inset]">
+                    <ArrowRight />
+                  </div>
+                </TextIcons>
+              </div>
+            </OutlineCard>
+            <OutlineCard size="xl" title="Hero Section">
+              <div className="w-full px-10">
+                <div className="flex w-full flex-col items-center justify-center gap-8 overflow-hidden rounded-3xl border border-border/50 bg-muted/50">
+                  <div className="flex  w-full">
+                    <div className="flex w-full  flex-col justify-center gap-10 p-20">
+                      <div className="flex flex-col gap-4">
+                        <h2 className="text-balance text-5xl font-semibold  tracking-tighter">
+                          The component library for your next project
+                        </h2>
+                        <p className="text-balance text-lg text-muted-foreground">
+                          Layout UI is a free and open source library.
+                        </p>
+                      </div>
+                      <div className="">
+                        <Button size="lg" className="mb-12 w-auto rounded-full">
+                          Start for free
+                        </Button>
+                        <Stars count={500} text="Loved by">
+                          <StarImage src="/faces/9.jpg" />
+                          <StarImage src="/faces/2.jpg" />
+                          <StarImage src="/faces/3.jpg" />
+                          <StarImage src="/faces/28.jpg" />
+                        </Stars>
+                      </div>
+                    </div>
+                    <div className="flex w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-indigo-50 py-4">
+                      <TestimonialCarousel direction="rtl">
+                        {testimonials.map((testimonial, index) => (
+                          <TestimonialCard key={index}>
+                            <TestimonialHeader>
+                              <TestimonialAvatar src={testimonial.avatar} />
+                              <TestimonialInfo>
+                                <Name>{testimonial.name}</Name>
+                                <Username>{testimonial.username}</Username>
+                              </TestimonialInfo>
+                            </TestimonialHeader>
+
+                            <TestimonialStars />
+
+                            <TestimonialContent>
+                              {testimonial.content.prefix}{" "}
+                              <TestimonialHighlight>
+                                {testimonial.content.highlight}
+                              </TestimonialHighlight>{" "}
+                              {testimonial.content.suffix}
+                            </TestimonialContent>
+
+                            <TestimonialDate>
+                              {testimonial.date}
+                            </TestimonialDate>
+                          </TestimonialCard>
+                        ))}
+                      </TestimonialCarousel>
+                      <TestimonialCarousel direction="ltr">
+                        {testimonials.map((testimonial, index) => (
+                          <TestimonialCard key={index}>
+                            <TestimonialHeader>
+                              <TestimonialAvatar src={testimonial.avatar} />
+                              <TestimonialInfo>
+                                <Name>{testimonial.name}</Name>
+                                <Username>{testimonial.username}</Username>
+                              </TestimonialInfo>
+                            </TestimonialHeader>
+
+                            <TestimonialStars />
+
+                            <TestimonialContent>
+                              {testimonial.content.prefix}{" "}
+                              <TestimonialHighlight>
+                                {testimonial.content.highlight}
+                              </TestimonialHighlight>{" "}
+                              {testimonial.content.suffix}
+                            </TestimonialContent>
+
+                            <TestimonialDate>
+                              {testimonial.date}
+                            </TestimonialDate>
+                          </TestimonialCard>
+                        ))}
+                      </TestimonialCarousel>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </OutlineCard>
           </div>
         </div>
       </div>
-      {/* <ExamplesNav className="[&>a:first-child]:text-primary" /> */}
     </div>
   )
 }

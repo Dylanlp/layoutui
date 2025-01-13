@@ -80,6 +80,9 @@ importers:
       turbo:
         specifier: ^1.9.9
         version: 1.9.9
+      typed.js:
+        specifier: ^2.1.0
+        version: 2.1.0
       vite:
         specifier: ^5.4.1
         version: 5.4.1(@types/node@20.11.27)
@@ -12566,6 +12569,10 @@ packages:
 
   /typed-query-selector@2.12.0:
     resolution: {integrity: sha512-SbklCd1F0EiZOyPiW192rrHZzZ5sBijB6xM+cpmrwDqObvdtunOHHIk9fCGsoK5JVIYXoyEp4iEdE3upFH3PAg==}
+    dev: false
+
+  /typed.js@2.1.0:
+    resolution: {integrity: sha512-bDuXEf7YcaKN4g08NMTUM6G90XU25CK3bh6U0THC/Mod/QPKlEt9g/EjvbYB8x2Qwr2p6J6I3NrsoYaVnY6wsQ==}
     dev: false
 
   /typescript@4.9.3:

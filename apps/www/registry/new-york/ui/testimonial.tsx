@@ -19,7 +19,7 @@ const TestimonialCard = React.forwardRef<HTMLDivElement, TestimonialCardProps>(
       <div
         ref={ref}
         className={cn(
-          "flex w-80 flex-col gap-4 hover:scale-[1.03] transition-all duration-300 rounded-2xl border-[0.5px] border-border bg-background p-4 shadow-sm",
+          "flex w-80 flex-col gap-4 rounded-2xl border-[0.5px] border-border bg-background p-4 shadow-sm transition-all duration-300 hover:scale-[1.03]",
           className
         )}
         {...props}
@@ -230,26 +230,34 @@ const TestimonialCarousel = React.forwardRef<
     const [isPaused, setIsPaused] = React.useState(false)
     const baseX = useMotionValue(0)
     const x = useTransform(baseX, (value) => `${value}%`)
+    const containerRef = React.useRef<HTMLDivElement>(null)
 
     useAnimationFrame((time, delta) => {
       if (isPaused) return
 
-      baseX.set(
-        (baseX.get() +
-          (direction === "ltr" ? -0.05 : 0.05) * (delta / 16.666)) %
-          50
-      )
+      let newX = baseX.get()
+      const moveAmount = (delta / 16.666) * 0.05
+
+      if (direction === "rtl") {
+        newX += moveAmount
+        if (newX >= 0) newX = -50
+      } else {
+        newX -= moveAmount
+        if (newX <= -50) newX = 0
+      }
+
+      baseX.set(newX)
     })
 
     return (
       <div
-        className="relative flex w-full overflow-hidden py-4 px-4"
+        className="relative flex w-full overflow-hidden p-4"
         ref={ref}
         onMouseEnter={() => pauseOnHover && setIsPaused(true)}
         onMouseLeave={() => pauseOnHover && setIsPaused(false)}
         {...props}
       >
-        <motion.div className="flex gap-4" style={{ x }}>
+        <motion.div className="flex gap-4" style={{ x }} ref={containerRef}>
           {children}
           {children}
         </motion.div>

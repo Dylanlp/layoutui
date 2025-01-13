@@ -19,7 +19,7 @@ export const TextIcons: FC<TextIconsProps> = ({ children, className }) => {
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start center", "end end"],
+    offset: ["start end", "end center"],
   })
 
   const elements: ReactNode[] = []
@@ -39,8 +39,8 @@ export const TextIcons: FC<TextIconsProps> = ({ children, className }) => {
   })
 
   return (
-    <div ref={targetRef} className={cn("relative z-0 h-screen", className)}>
-      <div className={"max-w-5xl items-center "}>
+    <div ref={targetRef} className={cn("relative z-0", className)}>
+      <div className={"min-h-[300px] max-w-5xl items-center"}>
         <p
           className={
             "flex flex-wrap p-5 text-2xl font-medium leading-loose tracking-tighter text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:text-4xl xl:text-[50px]"
