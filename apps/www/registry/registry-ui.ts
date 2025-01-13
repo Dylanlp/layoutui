@@ -402,9 +402,9 @@ export const ui: Registry = [
     files: ["ui/foundersnote.tsx"],
   },
   {
-    name: "texticons",
+    name: "text-icons",
     type: "registry:ui",
     dependencies: ["framer-motion"],
-    files: ["ui/texticons.tsx"],
+    files: ["ui/text-icons.tsx"],
   },
 ]
