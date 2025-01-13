@@ -1,0 +1,13 @@
+{
+  "name": "testimonial-demo",
+  "type": "registry:example",
+  "registryDependencies": ["testimonial"],
+  "files": [
+    {
+      "path": "example/testimonial-demo.tsx",
+      "content": "import {\n  TestimonialCard,\n  TestimonialHeader,\n  TestimonialAvatar,\n  TestimonialInfo,\n  Name,\n  Username,\n  TestimonialStars,\n  TestimonialContent,\n  TestimonialHighlight,\n  TestimonialDate,\n  TestimonialCarousel,\n} from \"@/registry/default/ui/testimonial\"\n\nexport default function TestimonialDemo() {\n  return (\n    <TestimonialCarousel>\n      <TestimonialCard>\n        <TestimonialHeader>\n          <TestimonialAvatar src=\"/faces/1.jpg\" alt=\"John Doe\" />\n          <TestimonialInfo>\n            <Name>John Doe</Name>\n            <Username>@johndoe</Username>\n          </TestimonialInfo>\n        </TestimonialHeader>\n        <TestimonialStars />\n        <TestimonialContent>\n          This product is <TestimonialHighlight>amazing</TestimonialHighlight>! It has completely transformed how I work.\n        </TestimonialContent>\n        <TestimonialDate>2 days ago</TestimonialDate>\n      </TestimonialCard>\n\n      <TestimonialCard>\n        <TestimonialHeader>\n          <TestimonialAvatar src=\"/faces/2.jpg\" alt=\"Jane Smith\" />\n          <TestimonialInfo>\n            <Name>Jane Smith</Name>\n            <Username>@janesmith</Username>\n          </TestimonialInfo>\n        </TestimonialHeader>\n        <TestimonialStars />\n        <TestimonialContent>\n          The attention to <TestimonialHighlight>detail</TestimonialHighlight> is incredible. Highly recommended!\n        </TestimonialContent>\n        <TestimonialDate>1 week ago</TestimonialDate>\n      </TestimonialCard>\n\n      <TestimonialCard>\n        <TestimonialHeader>\n          <TestimonialAvatar src=\"/faces/3.jpg\" alt=\"Mike Johnson\" />\n          <TestimonialInfo>\n            <Name>Mike Johnson</Name>\n            <Username>@mikej</Username>\n          </TestimonialInfo>\n        </TestimonialHeader>\n        <TestimonialStars />\n        <TestimonialContent>\n          <TestimonialHighlight>Outstanding</TestimonialHighlight> customer service and product quality.\n        </TestimonialContent>\n        <TestimonialDate>2 weeks ago</TestimonialDate>\n      </TestimonialCard>\n    </TestimonialCarousel>\n  )\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
