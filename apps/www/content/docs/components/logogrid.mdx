@@ -1,0 +1,88 @@
+---
+title: Logo Grid
+description: A dynamic grid of logos with smooth fade transitions and hover pause functionality.
+component: true
+links:
+---
+
+<ComponentPreview
+  name="logogrid-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+  description="A grid of logos with smooth transitions"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx add shadcn@latest https://www.layout.software/r/styles/default/logogrid.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install framer-motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="logogrid" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { Logo, LogoGrid } from "@/components/ui/logogrid"
+```
+
+```tsx
+<LogoGrid interval={3000} quantity={6}>
+  <Logo src="/logos/logo1.png" alt="Company 1" />
+  <Logo src="/logos/logo2.png" alt="Company 2" />
+  <Logo src="/logos/logo3.png" alt="Company 3" />
+  <Logo src="/logos/logo4.png" alt="Company 4" />
+  <Logo src="/logos/logo5.png" alt="Company 5" />
+  <Logo src="/logos/logo6.png" alt="Company 6" />
+  <Logo src="/logos/logo7.png" alt="Company 7" />
+  <Logo src="/logos/logo8.png" alt="Company 8" />
+</LogoGrid>
+```
+
+## Props
+
+### LogoGrid
+
+The grid component accepts the following props:
+
+- `interval` (optional): Duration in milliseconds between logo transitions. Defaults to 3000.
+- `quantity` (optional): Number of logos to display at once. Defaults to 6.
+- `children`: Logo components to display in the grid.
+
+### Logo
+
+The logo component accepts the following props:
+
+- `src`: Source URL for the logo image.
+- `alt`: Alt text for the logo image.
+- `className` (optional): Additional CSS classes to apply to the logo container.

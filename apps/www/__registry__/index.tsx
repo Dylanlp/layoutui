@@ -723,6 +723,35 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
+    "logogrid-demo": {
+      name: "logogrid-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["logogrid"],
+      files: ["registry/new-york/example/logogrid-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/logogrid-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "verticaltestimonial-demo": {
+      name: "verticaltestimonial-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["testimonial"],
+      files: ["registry/new-york/example/verticaltestimonial-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/verticaltestimonial-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+
 
     "alert-demo": {
       name: "alert-demo",
@@ -3183,36 +3212,6 @@ export const Index: Record<string, any> = {
       subcategory: "Sidebars",
       chunks: [],
     },
-    "sidebar-10": {
-      name: "sidebar-10",
-      description: "A sidebar in a popover.",
-      type: "registry:block",
-      registryDependencies: [
-        "sidebar",
-        "breadcrumb",
-        "separator",
-        "popover",
-        "collapsible",
-        "dropdown-menu",
-      ],
-      files: [
-        "registry/new-york/block/sidebar-10/page.tsx",
-        "registry/new-york/block/sidebar-10/components/app-sidebar.tsx",
-        "registry/new-york/block/sidebar-10/components/nav-actions.tsx",
-        "registry/new-york/block/sidebar-10/components/nav-favorites.tsx",
-        "registry/new-york/block/sidebar-10/components/nav-main.tsx",
-        "registry/new-york/block/sidebar-10/components/nav-secondary.tsx",
-        "registry/new-york/block/sidebar-10/components/nav-workspaces.tsx",
-        "registry/new-york/block/sidebar-10/components/team-switcher.tsx",
-      ],
-      component: React.lazy(
-        () => import("@/registry/new-york/block/sidebar-10/page.tsx")
-      ),
-      source: "__registry__/new-york/block/sidebar-10/page.tsx",
-      category: "Application",
-      subcategory: "Sidebars",
-      chunks: [],
-    },
     "sidebar-11": {
       name: "sidebar-11",
       description: "A sidebar with a collapsible file tree.",
@@ -5385,6 +5384,36 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
+    "logogrid-demo": {
+      name: "logogrid-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["logogrid"],
+      files: ["registry/default/example/logogrid-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/logogrid-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "verticaltestimonial-demo": {
+      name: "verticaltestimonial-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["testimonial"],
+      files: ["registry/default/example/verticaltestimonial-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/verticaltestimonial-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+
+
     "alert-demo": {
       name: "alert-demo",
       description: "",
@@ -7839,36 +7868,6 @@ export const Index: Record<string, any> = {
         () => import("@/registry/default/block/sidebar-09/page.tsx")
       ),
       source: "__registry__/default/block/sidebar-09/page.tsx",
-      category: "Application",
-      subcategory: "Sidebars",
-      chunks: [],
-    },
-    "sidebar-10": {
-      name: "sidebar-10",
-      description: "A sidebar in a popover.",
-      type: "registry:block",
-      registryDependencies: [
-        "sidebar",
-        "breadcrumb",
-        "separator",
-        "popover",
-        "collapsible",
-        "dropdown-menu",
-      ],
-      files: [
-        "registry/default/block/sidebar-10/page.tsx",
-        "registry/default/block/sidebar-10/components/app-sidebar.tsx",
-        "registry/default/block/sidebar-10/components/nav-actions.tsx",
-        "registry/default/block/sidebar-10/components/nav-favorites.tsx",
-        "registry/default/block/sidebar-10/components/nav-main.tsx",
-        "registry/default/block/sidebar-10/components/nav-secondary.tsx",
-        "registry/default/block/sidebar-10/components/nav-workspaces.tsx",
-        "registry/default/block/sidebar-10/components/team-switcher.tsx",
-      ],
-      component: React.lazy(
-        () => import("@/registry/default/block/sidebar-10/page.tsx")
-      ),
-      source: "__registry__/default/block/sidebar-10/page.tsx",
       category: "Application",
       subcategory: "Sidebars",
       chunks: [],

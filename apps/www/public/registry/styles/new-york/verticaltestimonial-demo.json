@@ -1,0 +1,13 @@
+{
+  "name": "verticaltestimonial-demo",
+  "type": "registry:example",
+  "registryDependencies": ["verticaltestimonial"],
+  "files": [
+    {
+      "path": "example/verticaltestimonial-demo.tsx",
+      "content": "import { VerticalTestimonial, VerticalTestimonialContent, VerticalTestimonialHighlight, VerticalTestimonialAvatar, VerticalTestimonialInfo, VerticalTestimonialName, VerticalTestimonialRole } from \"@/registry/new-york/ui/verticaltestimonial\"\n\nexport default function VerticalTestimonialDemo() {\n  return (\n    <VerticalTestimonial>\n      <VerticalTestimonialContent>\n        The attention to detail and the user experience is{\" \"}\n        <VerticalTestimonialHighlight>absolutely phenomenal</VerticalTestimonialHighlight>\n      </VerticalTestimonialContent>\n      <VerticalTestimonialAvatar\n        src=\"/avatars/01.png\"\n        alt=\"Sarah Wilson\"\n      />\n      <VerticalTestimonialInfo>\n        <VerticalTestimonialName>Sarah Wilson</VerticalTestimonialName>\n        <VerticalTestimonialRole>Product Designer</VerticalTestimonialRole>\n      </VerticalTestimonialInfo>\n    </VerticalTestimonial>\n  )\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

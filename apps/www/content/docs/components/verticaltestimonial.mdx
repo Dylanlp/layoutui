@@ -1,0 +1,81 @@
+---
+title: Vertical Testimonial
+description: A vertically oriented testimonial component with avatar, content highlighting, and role information.
+component: true
+links:
+---
+
+<ComponentPreview
+  name="verticaltestimonial-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+  description="A vertical testimonial with highlighted text"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx add shadcn@latest https://www.layout.software/r/styles/default/verticaltestimonial.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install framer-motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="verticaltestimonial" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+  VerticalTestimonial,
+  VerticalTestimonialAvatar,
+  VerticalTestimonialContent,
+  VerticalTestimonialHighlight,
+  VerticalTestimonialInfo,
+  VerticalTestimonialName,
+  VerticalTestimonialRole,
+} from "@/components/ui/verticaltestimonial"
+```
+
+```tsx
+<VerticalTestimonial>
+  <VerticalTestimonialContent>
+    The attention to detail and the user experience is
+    <VerticalTestimonialHighlight>
+      absolutely phenomenal
+    </VerticalTestimonialHighlight>
+  </VerticalTestimonialContent>
+  <VerticalTestimonialAvatar src="/avatars/user.png" alt="User avatar" />
+  <VerticalTestimonialInfo>
+    <VerticalTestimonialName>Sarah Wilson</VerticalTestimonialName>
+    <VerticalTestimonialRole>Product Designer</VerticalTestimonialRole>
+  </VerticalTestimonialInfo>
+</VerticalTestimonial>
+```

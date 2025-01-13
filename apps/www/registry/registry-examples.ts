@@ -32,6 +32,12 @@ export const examples: Registry = [
     files: ["example/testimonialcarousel-demo.tsx"],
   },
   {
+    name: "logogrid-demo",
+    type: "registry:example",
+    registryDependencies: ["logogrid"],
+    files: ["example/logogrid-demo.tsx"],
+  },
+  {
     name: "alert-demo",
     type: "registry:example",
     registryDependencies: ["alert"],
@@ -1025,5 +1031,11 @@ export const examples: Registry = [
         type: "registry:component",
       },
     ],
+  },
+  {
+    name: "verticaltestimonial-demo",
+    type: "registry:example",
+    registryDependencies: ["verticaltestimonial"],
+    files: ["example/verticaltestimonial-demo.tsx"],
   },
 ]

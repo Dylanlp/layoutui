@@ -389,4 +389,10 @@ export const ui: Registry = [
     dependencies: ["@radix-ui/react-tooltip"],
     files: ["ui/tooltip.tsx"],
   },
+  {
+    name: "verticaltestimonial",
+    type: "registry:ui",
+    dependencies: ["framer-motion"],
+    files: ["ui/verticaltestimonial.tsx"],
+  },
 ]
