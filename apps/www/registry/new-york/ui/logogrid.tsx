@@ -45,6 +45,19 @@ const LogoGrid = React.forwardRef<HTMLDivElement, LogoGridProps>(
     const logos = React.Children.toArray(children)
     const [visibleLogos, setVisibleLogos] = React.useState<number[]>([])
     const [nextLogoIndex, setNextLogoIndex] = React.useState(0)
+    const [isVisible, setIsVisible] = React.useState(true)
+
+    // Handle visibility change
+    React.useEffect(() => {
+      const handleVisibilityChange = () => {
+        setIsVisible(!document.hidden)
+      }
+
+      document.addEventListener("visibilitychange", handleVisibilityChange)
+      return () => {
+        document.removeEventListener("visibilitychange", handleVisibilityChange)
+      }
+    }, [])
 
     // Initialize with first N unique logos (or less if fewer logos provided)
     React.useEffect(() => {
@@ -54,9 +67,9 @@ const LogoGrid = React.forwardRef<HTMLDivElement, LogoGridProps>(
       setNextLogoIndex(numLogosToShow)
     }, [logos.length, quantity])
 
-    // Handle the rotation only if we have more logos than quantity
+    // Handle the rotation only if we have more logos than quantity and tab is visible
     React.useEffect(() => {
-      if (logos.length <= quantity) return
+      if (logos.length <= quantity || !isVisible) return
 
       const timer = setInterval(() => {
         setVisibleLogos((prev) => {
@@ -83,8 +96,10 @@ const LogoGrid = React.forwardRef<HTMLDivElement, LogoGridProps>(
         setNextLogoIndex((current) => (current + 1) % logos.length)
       }, interval)
 
-      return () => clearInterval(timer)
-    }, [interval, logos.length, nextLogoIndex, quantity])
+      return () => {
+        clearInterval(timer)
+      }
+    }, [interval, logos.length, nextLogoIndex, quantity, isVisible])
 
     return (
       <div
