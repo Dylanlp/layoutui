@@ -1,0 +1,106 @@
+---
+title: Founders Note
+description: An expandable note component with avatar, signature, and role information, perfect for founder messages or personal notes.
+component: true
+links:
+---
+
+<ComponentPreview
+  name="foundersnote-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+  description="An expandable founders note with avatar and signature"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx add shadcn@latest https://www.layout.software/r/styles/default/foundersnote.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install framer-motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="foundersnote" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+  FoundersNote,
+  FoundersNoteAuthor,
+  FoundersNoteAvatar,
+  FoundersNoteContent,
+  FoundersNoteExpandable,
+  FoundersNoteFooter,
+  FoundersNoteHeadline,
+  FoundersNoteInfo,
+  FoundersNoteName,
+  FoundersNoteRole,
+  FoundersNoteSubtext,
+} from "@/components/ui/foundersnote"
+```
+
+```tsx
+export default function FoundersNoteDemo() {
+  const [isExpanded, setIsExpanded] = React.useState(false)
+
+  return (
+    <FoundersNote
+      isExpanded={isExpanded}
+      onToggle={() => setIsExpanded(!isExpanded)}
+    >
+      <FoundersNoteContent isExpanded={isExpanded}>
+        <FoundersNoteHeadline>A note from our founder</FoundersNoteHeadline>
+        <FoundersNoteSubtext>
+          Thank you for being part of our journey. We're committed to building
+          something truly special.
+        </FoundersNoteSubtext>
+        <FoundersNoteExpandable isExpanded={isExpanded}>
+          Our mission is to empower creators and innovators with tools that make
+          their work easier and more impactful.
+        </FoundersNoteExpandable>
+      </FoundersNoteContent>
+      <FoundersNoteFooter>
+        <FoundersNoteAuthor>
+          <FoundersNoteAvatar
+            avatarSrc="/avatars/founder.png"
+            signatureSrc="/signatures/founder.png"
+          />
+          <FoundersNoteInfo>
+            <FoundersNoteName>John Smith</FoundersNoteName>
+            <FoundersNoteRole>Founder & CEO</FoundersNoteRole>
+          </FoundersNoteInfo>
+        </FoundersNoteAuthor>
+      </FoundersNoteFooter>
+    </FoundersNote>
+  )
+}
+```

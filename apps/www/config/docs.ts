@@ -101,6 +101,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/foundersnote",
           items: [],
         },
+        {
+          title: "Text Icons",
+          href: "/docs/components/texticons",
+          items: [],
+        },
 
         // {
         //   title: "Alert Dialog",

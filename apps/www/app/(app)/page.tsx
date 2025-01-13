@@ -29,6 +29,19 @@ import {
   Stat,
 } from "@/registry/new-york/ui/achievements"
 import { Button } from "@/registry/new-york/ui/button"
+import {
+  FoundersNote,
+  FoundersNoteAuthor,
+  FoundersNoteAvatar,
+  FoundersNoteContent,
+  FoundersNoteExpandable,
+  FoundersNoteFooter,
+  FoundersNoteHeadline,
+  FoundersNoteInfo,
+  FoundersNoteName,
+  FoundersNoteRole,
+  FoundersNoteSubtext,
+} from "@/registry/new-york/ui/foundersnote"
 import { Input } from "@/registry/new-york/ui/input"
 import { Logo, LogoGrid } from "@/registry/new-york/ui/logogrid"
 import { OutlineCard } from "@/registry/new-york/ui/outlinecard"
@@ -483,88 +496,58 @@ export default function IndexPage() {
               </div>
             </OutlineCard>
             <OutlineCard size="xl" title="Founders Note">
-              <div
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="relative mx-auto flex max-w-md cursor-pointer flex-col gap-8 rounded-3xl border-[0.5px] border-border/60 bg-white p-10 shadow-sm transition-all duration-300 hover:shadow-md"
+              <FoundersNote
+                isExpanded={isExpanded}
+                onToggle={() => setIsExpanded(!isExpanded)}
               >
-                <div className="relative flex flex-col gap-4 text-pretty">
-                  <div>
-                    <p className="text-md font-medium text-foreground">
-                      Out of the 12+ million landing pages online, only 8% will
-                      convert more than 1% of visitors.
+                <FoundersNoteContent isExpanded={isExpanded}>
+                  <FoundersNoteHeadline>
+                    Out of the 12+ million landing pages online, only 8% will
+                    convert more than 1% of visitors.
+                  </FoundersNoteHeadline>
+
+                  <FoundersNoteSubtext>
+                    Yup - while it&apos;s easier than ever to build a landing
+                    page, it&apos;s harder than ever to make it convert.
+                  </FoundersNoteSubtext>
+
+                  <FoundersNoteExpandable isExpanded={isExpanded}>
+                    <p className="text-sm text-muted-foreground">
+                      Most landing pages have two challenges with conversion:
+                      <br />
+                      <br />
+                      1. Getting visitors to take the first action
+                      <br />
+                      2. Getting those who do to come back
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      That&apos;s why I built Layout UI - to give developers and
+                      startups the components they need to build high-converting
+                      pages.
                     </p>
 
-                    <p className="mt-4 text-sm text-muted-foreground">
-                      Yup - while it&apos;s easier than ever to build a landing
-                      page, it&apos;s harder than ever to make it convert.
+                    <p className="text-sm text-muted-foreground">
+                      In the last 7 years, I&apos;ve helped startups increase
+                      conversion with optimized landing pages. I&apos;d love for
+                      you to give these components a try.
                     </p>
+                  </FoundersNoteExpandable>
+                </FoundersNoteContent>
 
-                    {!isExpanded && (
-                      <div className="absolute bottom-0 h-24 w-full bg-gradient-to-t from-white to-transparent" />
-                    )}
-                  </div>
-
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{
-                      height: isExpanded ? "auto" : 0,
-                      opacity: isExpanded ? 1 : 0,
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 20,
-                    }}
-                    style={{ overflow: "hidden" }}
-                  >
-                    <div className="flex flex-col gap-4 pt-4">
-                      <p className="text-sm text-muted-foreground">
-                        Most landing pages have two challenges with conversion:
-                        <br />
-                        <br />
-                        1. Getting visitors to take the first action
-                        <br />
-                        2. Getting those who do to come back
-                      </p>
-
-                      <p className="text-sm text-muted-foreground">
-                        That&apos;s why I built Layout UI - to give developers
-                        and startups the components they need to build
-                        high-converting pages.
-                      </p>
-
-                      <p className="text-sm text-muted-foreground">
-                        In the last 7 years, I&apos;ve helped startups increase
-                        conversion with optimized landing pages. I&apos;d love
-                        for you to give these components a try.
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
-
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-6">
-                    <div className="relative flex h-10 w-10 items-center">
-                      <img
-                        src="https://cal.com/api/avatar/122580ed-bc99-4f13-9b97-c609fecdb335.png"
-                        alt="dylan"
-                        className="h-10 w-10 rounded-full"
-                      />
-                      <img
-                        src="/signature.svg"
-                        alt="dylan"
-                        className="absolute -bottom-1 -right-4 min-w-12"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-0.5">
-                      <p className="text-sm font-medium leading-4">Dylan</p>
-                      <p className="text-sm leading-4 text-muted-foreground">
-                        Founder, Layout UI
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <FoundersNoteFooter>
+                  <FoundersNoteAuthor>
+                    <FoundersNoteAvatar
+                      avatarSrc="https://cal.com/api/avatar/122580ed-bc99-4f13-9b97-c609fecdb335.png"
+                      signatureSrc="/signature.svg"
+                    />
+                    <FoundersNoteInfo>
+                      <FoundersNoteName>Dylan</FoundersNoteName>
+                      <FoundersNoteRole>Founder, Layout UI</FoundersNoteRole>
+                    </FoundersNoteInfo>
+                  </FoundersNoteAuthor>
+                </FoundersNoteFooter>
+              </FoundersNote>
+             
             </OutlineCard>
             <OutlineCard size="lg" title="Typing Hero">
               <div className="w-full px-10">

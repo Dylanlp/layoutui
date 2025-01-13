@@ -1,0 +1,13 @@
+{
+  "name": "foundersnote-demo",
+  "type": "registry:example",
+  "registryDependencies": ["foundersnote"],
+  "files": [
+    {
+      "path": "example/foundersnote-demo.tsx",
+      "content": "import * as React from \"react\"\nimport { FoundersNote, FoundersNoteContent, FoundersNoteHeadline, FoundersNoteSubtext, FoundersNoteExpandable, FoundersNoteFooter, FoundersNoteAuthor, FoundersNoteAvatar, FoundersNoteInfo, FoundersNoteName, FoundersNoteRole } from \"@/registry/new-york/ui/foundersnote\"\n\nexport default function FoundersNoteDemo() {\n  const [isExpanded, setIsExpanded] = React.useState(false)\n\n  return (\n    <FoundersNote isExpanded={isExpanded} onToggle={() => setIsExpanded(!isExpanded)}>\n      <FoundersNoteContent isExpanded={isExpanded}>\n        <FoundersNoteHeadline>\n          Out of the 12+ million landing pages online, only 8% will convert more than 1% of visitors.\n        </FoundersNoteHeadline>\n        <FoundersNoteSubtext>\n          Yup - while it&apos;s easier than ever to build a landing page, it&apos;s harder than ever to make it convert.\n        </FoundersNoteSubtext>\n        <FoundersNoteExpandable isExpanded={isExpanded}>\n          <p className=\"text-sm text-muted-foreground\">\n            Most landing pages have two challenges with conversion:\n            <br />\n            <br />\n            1. Getting visitors to take the first action\n            <br />\n            2. Getting those who do to come back\n          </p>\n          <p className=\"text-sm text-muted-foreground\">\n            That&apos;s why I built Layout UI - to give developers and startups the components they need to build high-converting pages.\n          </p>\n          <p className=\"text-sm text-muted-foreground\">\n            In the last 7 years, I&apos;ve helped startups increase conversion with optimized landing pages. I&apos;d love for you to give these components a try.\n          </p>\n        </FoundersNoteExpandable>\n      </FoundersNoteContent>\n      <FoundersNoteFooter>\n        <FoundersNoteAuthor>\n          <FoundersNoteAvatar\n            avatarSrc=\"https://cal.com/api/avatar/122580ed-bc99-4f13-9b97-c609fecdb335.png\"\n            signatureSrc=\"/signature.svg\"\n          />\n          <FoundersNoteInfo>\n            <FoundersNoteName>Dylan</FoundersNoteName>\n            <FoundersNoteRole>Founder, Layout UI</FoundersNoteRole>\n          </FoundersNoteInfo>\n        </FoundersNoteAuthor>\n      </FoundersNoteFooter>\n    </FoundersNote>\n  )\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

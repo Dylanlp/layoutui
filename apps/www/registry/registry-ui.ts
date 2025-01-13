@@ -395,4 +395,16 @@ export const ui: Registry = [
     dependencies: ["framer-motion"],
     files: ["ui/verticaltestimonial.tsx"],
   },
+  {
+    name: "foundersnote",
+    type: "registry:ui",
+    dependencies: ["framer-motion"],
+    files: ["ui/foundersnote.tsx"],
+  },
+  {
+    name: "texticons",
+    type: "registry:ui",
+    dependencies: ["framer-motion"],
+    files: ["ui/texticons.tsx"],
+  },
 ]

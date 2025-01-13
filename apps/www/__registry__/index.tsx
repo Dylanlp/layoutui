@@ -751,7 +751,34 @@ export const Index: Record<string, any> = {
       subcategory: "",
       chunks: [],
     },
-
+    "foundersnote-demo": {
+      name: "foundersnote-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["foundersnote"],
+      files: ["registry/new-york/example/foundersnote-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/foundersnote-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "texticons-demo": {
+      name: "texticons-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["texticons"],
+      files: ["registry/new-york/example/texticons-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/texticons-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
 
     "alert-demo": {
       name: "alert-demo",
@@ -5406,6 +5433,34 @@ export const Index: Record<string, any> = {
       files: ["registry/default/example/verticaltestimonial-demo.tsx"],
       component: React.lazy(
         () => import("@/registry/default/example/verticaltestimonial-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "foundersnote-demo": {
+      name: "foundersnote-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["foundersnote"],
+      files: ["registry/default/example/foundersnote-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/foundersnote-demo.tsx")
+      ),
+      source: "",
+      category: "",
+      subcategory: "",
+      chunks: [],
+    },
+    "texticons-demo": {
+      name: "texticons-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["texticons"],
+      files: ["registry/default/example/texticons-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/texticons-demo.tsx")
       ),
       source: "",
       category: "",

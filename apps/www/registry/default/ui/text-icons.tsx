@@ -8,9 +8,14 @@ import { cn } from "@/lib/utils"
 interface TextIconsProps {
   children: ReactNode
   className?: string
+  size?: "default" | "sm"
 }
 
-export const TextIcons: FC<TextIconsProps> = ({ children, className }) => {
+export const TextIcons: FC<TextIconsProps> = ({
+  children,
+  className,
+  size = "default",
+}) => {
   const targetRef = useRef<HTMLDivElement | null>(null)
   const isInView = useInView(targetRef, {
     margin: "-50% 0px 0px 0px",
@@ -42,9 +47,12 @@ export const TextIcons: FC<TextIconsProps> = ({ children, className }) => {
     <div ref={targetRef} className={cn("relative z-0", className)}>
       <div className={"min-h-[300px] max-w-5xl items-center"}>
         <p
-          className={
-            "flex flex-wrap p-5 text-2xl font-medium leading-loose tracking-tighter text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:text-4xl xl:text-[50px]"
-          }
+          className={cn(
+            "flex flex-wrap p-5 font-medium leading-loose tracking-tighter text-black/20 dark:text-white/20 md:p-8",
+            size === "default"
+              ? "text-2xl md:text-3xl lg:text-4xl xl:text-[50px]"
+              : "text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+          )}
         >
           {elements.map((element, i) => {
             const start = i / elements.length

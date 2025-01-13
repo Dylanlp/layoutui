@@ -1,0 +1,72 @@
+---
+title: Text Icons
+description: A text component that smoothly reveals content with scroll-based animations and supports inline icons and components.
+component: true
+links:
+---
+
+<ComponentPreview
+  name="texticons-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+  description="A text component with animated reveal on scroll"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx add shadcn@latest https://www.layout.software/r/styles/default/text-icons.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install framer-motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-icons" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { TextIcons } from "@/components/ui/text-icons"
+```
+
+```tsx
+<TextIcons>
+  Build beautiful websites with{" "}
+  <div className="flex h-11 items-center justify-center gap-2 rounded-full border border-border px-4">
+    <p className="text-xl tracking-normal">Layout UI</p>
+  </div>{" "}
+  <br />
+  Fully <div>
+    <div className="group relative flex h-11 -rotate-6 items-center justify-center gap-5 rounded-xl border border-[hsl(120,70%,90%)] bg-[hsl(120,70%,95%)] px-4 py-2 text-[hsl(120,70%,20%)] shadow-[0px_19px_16px_0px_rgba(255,255,255,0.50)_inset,0px_4px_8px_0px_rgba(0,0,0,0.12),0px_0px_0px_1px_hsl(120,70%,80%)_inset,0px_4px_1px_0px_rgba(255,255,255,0.25)_inset,0px_-2px_3px_0px_rgba(0,0,0,0.25)_inset]">
+      <p className="text-sm tracking-normal">hand-crafted</p>
+    </div>{" "}
+  </div> customizable components
+</TextIcons>
+```

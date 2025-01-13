@@ -1038,4 +1038,16 @@ export const examples: Registry = [
     registryDependencies: ["verticaltestimonial"],
     files: ["example/verticaltestimonial-demo.tsx"],
   },
+  {
+    name: "foundersnote-demo",
+    type: "registry:example",
+    registryDependencies: ["foundersnote"],
+    files: ["example/foundersnote-demo.tsx"],
+  },
+  {
+    name: "texticons-demo",
+    type: "registry:example",
+    registryDependencies: ["texticons"],
+    files: ["example/texticons-demo.tsx"],
+  },
 ]
