@@ -1,6 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["NODE_ENV"],
+  "globalEnv": [
+    "NEXT_PUBLIC_APP_URL",
+    "NEXT_PUBLIC_VERCEL_URL",
+    "VERCEL_URL",
+    "PORT",
+    "NODE_ENV",
+    "ANTHROPIC_API_KEY"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
@@ -14,7 +21,8 @@
         "https_proxy",
         "V0_URL",
         "V0_EDIT_SECRET",
-        "DEPLOYMENT_PROTECTION_BYPASS"
+        "DEPLOYMENT_PROTECTION_BYPASS",
+        "ANTHROPIC_API_KEY"
       ],
       "outputs": ["dist/**", ".next/**"]
     },
@@ -43,7 +51,8 @@
     },
     "typecheck": {},
     "dev": {
-      "cache": false
+      "cache": false,
+      "env": ["ANTHROPIC_API_KEY"]
     },
     "check": {
       "cache": false
